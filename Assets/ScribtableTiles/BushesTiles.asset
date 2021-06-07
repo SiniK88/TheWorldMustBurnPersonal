@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c549008f833ef094cb4efe577cd9439c, type: 3}
+  m_Name: BushesTiles
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 11400000, guid: 367f33cf4107fd04797416c3a7ffbaeb, type: 2}
+  - {fileID: 11400000, guid: 09bf99e2e9f1a5e499bc908ccc63cebd, type: 2}
+  - {fileID: 11400000, guid: 6094f563f58a6d043ac5c2b72994a786, type: 2}
+  - {fileID: 11400000, guid: 79756a06daa002d4884643f537311b56, type: 2}
+  - {fileID: 11400000, guid: 9f1163caed1a8be40adf46e0ddc18efe, type: 2}
+  - {fileID: 11400000, guid: d4cebeaa57d4f42479c9d564a7574a06, type: 2}
+  walkingSpeed: 0
+  spreadChange: 100
+  spreadInterwall: 1
+  burnTime: 3
+  canBurn: 1
+  ashTile: 0

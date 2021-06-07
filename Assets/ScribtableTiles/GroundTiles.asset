@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c549008f833ef094cb4efe577cd9439c, type: 3}
+  m_Name: GroundTiles
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 11400000, guid: 724b1745e030abe47916649d0813ed3f, type: 2}
+  - {fileID: 11400000, guid: a350c9569a968784c9574f546ac3cc09, type: 2}
+  - {fileID: 11400000, guid: d55c5b064fe5fce4998fdd577ee5adc9, type: 2}
+  - {fileID: 11400000, guid: dd5e646cdf1e09e41b49c2cb50cd8c96, type: 2}
+  - {fileID: 11400000, guid: b5f67df366f256348ad0522a5d66219a, type: 2}
+  - {fileID: 11400000, guid: bb0a5703d47fdff438b912b65efc7d9b, type: 2}
+  - {fileID: 11400000, guid: 93a0dd59038ce8f4f83fd9e9f56546c6, type: 2}
+  - {fileID: 11400000, guid: 108b9b0c54c0f8042b9d3e2c903fafe9, type: 2}
+  - {fileID: 11400000, guid: f4ac404dcd4ebd24ca53cbc38222931e, type: 2}
+  - {fileID: 11400000, guid: a18b1c71a4e556c44842eebcedc77107, type: 2}
+  - {fileID: 11400000, guid: 4b94fddf42e03e94496b7049de4fb061, type: 2}
+  - {fileID: 11400000, guid: 3efb64f95aaf93c4ca7d24fb7b49f368, type: 2}
+  - {fileID: 11400000, guid: b042ea04aaccef04185e6ac9c3440260, type: 2}
+  - {fileID: 11400000, guid: f1142eeb98ffc3646b3e26a4a9bb34e8, type: 2}
+  - {fileID: 11400000, guid: 4bdaa143403c18846bc99b5e69c7f03e, type: 2}
+  - {fileID: 11400000, guid: ec4c906f43aeaed409d55a399463d07d, type: 2}
+  - {fileID: 11400000, guid: 2ebf5dbb5165d494b8db4fdda15df864, type: 2}
+  - {fileID: 11400000, guid: 327a7049a0ab5b34e90d4bb21c29ef9b, type: 2}
+  - {fileID: 11400000, guid: 866966d292bee724a830bda03edbd5b9, type: 2}
+  - {fileID: 11400000, guid: 31033b1bd25535f47bf4d47b20951fea, type: 2}
+  - {fileID: 11400000, guid: 7fb356a9d1037ee42b8f20ba94a90a6b, type: 2}
+  - {fileID: 11400000, guid: e7c3a59a8da673045b9c8080d753f75d, type: 2}
+  - {fileID: 11400000, guid: 2728025ce71c7854f861275a643aad21, type: 2}
+  - {fileID: 11400000, guid: afaa3e82ff3a63e4a8995e213c05f161, type: 2}
+  - {fileID: 11400000, guid: f3a2f4119d002a0478624c3e950fbb26, type: 2}
+  - {fileID: 11400000, guid: 6164c3ccad8478c42a6907179a7307d7, type: 2}
+  - {fileID: 11400000, guid: 685a7657d73623242a48c1206f5e653a, type: 2}
+  - {fileID: 11400000, guid: 844dad03b3ec65948bb30a9a5b9c6b39, type: 2}
+  - {fileID: 11400000, guid: 7f8622a4944000e4487ad32ee4907527, type: 2}
+  - {fileID: 11400000, guid: bc12429c0b6ff244ebf5dddd2402cbca, type: 2}
+  - {fileID: 11400000, guid: 0be734e44975fea4180a429481f2f272, type: 2}
+  - {fileID: 11400000, guid: 3b5fd49a01eb70e40818486e3b65626f, type: 2}
+  - {fileID: 11400000, guid: d2abcd8a687920446bbaa60074382c62, type: 2}
+  - {fileID: 11400000, guid: 19ed1002110f9a54eb3e0beede560712, type: 2}
+  - {fileID: 11400000, guid: 802a74895f0e7b547be17276feed7a89, type: 2}
+  - {fileID: 11400000, guid: 1473bc45e0418ee4baadb4376cb7acf3, type: 2}
+  - {fileID: 11400000, guid: 18f96ead5044c6646b2304083f7c20a8, type: 2}
+  - {fileID: 11400000, guid: 4d4d57e24e46f7f4c8319d54caec5e2d, type: 2}
+  spreadChange: 0
+  spreadInterwall: 0
+  burnTime: 0
+  canBurn: 0
+  ashTile: 0
+  groudTile: 1
+  waterTile: 0
+  leavesTile: 0
+  secret: 0

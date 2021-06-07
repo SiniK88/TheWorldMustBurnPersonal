@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c549008f833ef094cb4efe577cd9439c, type: 3}
+  m_Name: Puu3
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 11400000, guid: c7ffa9024f5b05240987c8ddab3c765a, type: 2}
+  - {fileID: 11400000, guid: 0a51a00e9d767d54e841ee8135c7ee7c, type: 2}
+  - {fileID: 11400000, guid: 7f224e1a912907f4383dd149cb3cdfed, type: 2}
+  - {fileID: 11400000, guid: 81406f1ddd7311e45a34f23a8972b8a8, type: 2}
+  burned: {fileID: 7485049298677533283, guid: 15739f3cc6231554b93caf53dab8b3c9, type: 3}
+  spreadChange: 100
+  spreadInterwall: 0.7
+  burnTime: 4
+  canBurn: 1
+  ashTile: 0
+  groudTile: 0
+  waterTile: 0
+  leavesTile: 0
+  secret: 0
