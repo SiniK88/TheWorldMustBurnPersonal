@@ -13,10 +13,15 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject weapon;
     public GameObject fm;
-    PowerUpProjektile powerup; 
+    PowerUpProjektile powerup;
 
+
+    public GameObject[] playerBody;
     void Start()
     {
+
+        playerBody = GameObject.FindGameObjectsWithTag("PlayerBody");
+
         player = GameObject.FindGameObjectWithTag("Player");
         powerup = FindObjectOfType<PowerUpProjektile>();
     }

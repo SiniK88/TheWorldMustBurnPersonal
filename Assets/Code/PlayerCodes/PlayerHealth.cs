@@ -59,7 +59,7 @@ public class PlayerHealth : MonoBehaviour
                 AudioFW.Play("Death");
             }
             player.GetComponent<RayCastPlayer>().enabled = false;
-            playerController.DeathAnim();
+            //playerController.DeathAnim();
             //anim.Play("FadeIn");
             anim.Play("FadeOut");
             Destroy(transform.parent.gameObject, 3f);

@@ -56,7 +56,7 @@ public class SparksMoving : MonoBehaviour
     void DestroySpark() {
         var projectileEndParticleclone = Instantiate(projectileEndParticle, transform.position, transform.rotation);
         Destroy(projectileEndParticleclone.gameObject,1);
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {

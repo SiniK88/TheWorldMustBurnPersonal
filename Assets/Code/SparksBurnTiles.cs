@@ -50,9 +50,9 @@ public class SparksBurnTiles : MonoBehaviour
                     }
                 }
 
-                //print(hitPosition);
+
                 var hitPosInt = ToInt3(hitPosition);
-                //print(hitPosInt);
+
                 TileData data = mapManager.GetTileData(hitPosInt);
 
                 if (map.HasTile(hitPosInt) && data.canBurn == true) {

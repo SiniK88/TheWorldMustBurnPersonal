@@ -30,7 +30,7 @@ public class Fire : MonoBehaviour
         if(spreadInterwallCounter <= 0) {
             spreadInterwallCounter = data.spreadInterwall;
             fireManager.TryToSpread(position, data.spreadChange);
-            //fireManager.TryToSpreadNoCol(position, data.spreadChange);
+            fireManager.TryToSpreadMoving(position, data.spreadChange);
         }
 
     }

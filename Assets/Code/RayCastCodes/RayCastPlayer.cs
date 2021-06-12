@@ -59,9 +59,14 @@ public class RayCastPlayer : MonoBehaviour
     const string PLAYER_DEATH_RED = "PlayerDeathRed";
     const string PLAYER_DEATH_BLUE = "PlayerDeathBlue";
 
+    public GameObject playerBodyRed, playerBodyBlue, playerBodyPurple;
 
 
     private void Start() {
+
+ 
+
+
         gm = FindObjectOfType<GameManager>();
         animator = GetComponent<Animator>();
 
@@ -90,7 +95,21 @@ public class RayCastPlayer : MonoBehaviour
         }
         transform.localScale = characterScale;
 
-        if (velocity.y > 0) {
+        if (gm.State == PowerupType.None) {
+            playerBodyRed.SetActive(true);
+            playerBodyBlue.SetActive(false);
+            playerBodyPurple.SetActive(false);
+        } else if (gm.State == PowerupType.Projectile) {
+            playerBodyRed.SetActive(false);
+            playerBodyBlue.SetActive(true);
+            playerBodyPurple.SetActive(false);
+        } else if (gm.State == PowerupType.NoFire) {
+            playerBodyRed.SetActive(false);
+            playerBodyBlue.SetActive(false);
+            playerBodyPurple.SetActive(true);
+        }
+
+        /*if (velocity.y > 0) {
             if (gm.State == PowerupType.None) {
                 ChangeAnimationState(PLAYER_JUMP_RED);
             } else if (gm.State == PowerupType.Projectile) {
@@ -108,7 +127,7 @@ public class RayCastPlayer : MonoBehaviour
             } else if (gm.State == PowerupType.NoFire) {
                 ChangeAnimationState(PLAYER_IDLE_PURPLE);
             }
-        }
+        }*/
 
         if (controller.collisions.above || controller.collisions.below) {
             velocity.y = 0;
@@ -173,7 +192,7 @@ public class RayCastPlayer : MonoBehaviour
     }
 
 
-    public void DeathAnim() {
+    /*public void DeathAnim() {
         if (gm.State == PowerupType.None) {
             ChangeAnimationState(PLAYER_DEATH_RED);
         } else if (gm.State == PowerupType.Projectile) {
@@ -181,7 +200,7 @@ public class RayCastPlayer : MonoBehaviour
         } else if (gm.State == PowerupType.NoFire) {
             ChangeAnimationState(PLAYER_DEATH_PURPLE);
         }
-    }
+    }*/
 
     void Dash() {
         if (direction == 0) {
@@ -198,15 +217,8 @@ public class RayCastPlayer : MonoBehaviour
                     direction = 2;
                     dash = true;
                     //dashBlock.SetActive(true);
-                }  /*if (moveInputY > 0 || Input.GetKey(KeyCode.W)) {
-                    //CreateDashKipinä();
-                    dash = true;
-                    direction = 3;
-                }  if (moveInputY < 0 || Input.GetKey(KeyCode.S)) {
-                    //CreateDashKipinä();
-                    dash = true;
-                    direction = 4;
-                }*/
+                } 
+
                 canDash = false;
                 StartCoroutine(DashTimer());
             }
@@ -226,11 +238,7 @@ public class RayCastPlayer : MonoBehaviour
                 } else if (direction == 2) {
                     dashBlock.SetActive(true);
                     velocity = Vector2.right * dashSpeed;
-                }/* else if (direction == 3) {
-                    velocity = Vector2.up * dashSpeed;                  
-                } else if (direction == 4) {
-                    velocity = Vector2.down * dashSpeed;
-                }*/
+                }
             }
         }
     }

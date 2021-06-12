@@ -44,47 +44,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map: {fileID: 0}
-  ashTile: {fileID: 0}
-  ashTilePile: {fileID: 11400000, guid: 0023a9985ecec064e85b467749ea6865, type: 2}
-  ashTileTreeBase: {fileID: 11400000, guid: a90c38be3874ac049a9dafc2f43daf7c, type: 2}
-  ashTileTreeLeft: {fileID: 11400000, guid: a6875989b9359c443ad4a7d7378c778b, type: 2}
-  ashTileTreeRight: {fileID: 11400000, guid: a62209139fe80e94f9f553fd0e2ff705, type: 2}
-  ashTileTreeMiddle: {fileID: 11400000, guid: 8f78e7d1ec4cc574284cf9f418b34f5a, type: 2}
   mapManager: {fileID: 0}
   firePrefab: {fileID: 8579498863020270067, guid: a017639beb79e9c4fb3ac0e76e643b19, type: 3}
   firePrefabup: {fileID: 0}
+  firePrefab2: {fileID: 7476430175135693217, guid: 5801fac8aac8aae43a0ad5c561fbc55d, type: 3}
+  firePrefabup2: {fileID: 4582448298955617623, guid: 06509c81d5f1ab147bc4d2fd993f7e64, type: 3}
   allFires: {fileID: 0}
-  firePrefabNoCol: {fileID: 6640460626265020680, guid: b59df88837396d8418743d71db3357ea, type: 3}
-  ashTilePileP: {fileID: 6690335157824817701, guid: 71d89deb5a63ef94ea1ebeba878c3e5e, type: 3}
-  ashTileTreeBaseP: {fileID: 5236670087941712360, guid: 7032f4ce21b84834fa84da10219c4941, type: 3}
-  ashTileTreeLeftP: {fileID: 5684125666209967308, guid: 187f4e4c14c59d84dba56cf9623ef754, type: 3}
-  ashTileTreeRightP: {fileID: 1541129166273691602, guid: 40f3cdf1c349dee44a849609697375ce, type: 3}
-  ashTileTreeMiddleP: {fileID: 2376402548781187336, guid: 72adb93ed707dc84e869405a49b627c0, type: 3}
-  kuusi_Hole: {fileID: 1876133324222187065, guid: 3c14e32aa5d25f64788af934ed2792d6, type: 3}
-  kuusi_left: {fileID: 7680660637283269014, guid: 4660e1ff2e69ab346ac79fc5376dbb42, type: 3}
-  kuusi_Right: {fileID: 4888550899491724234, guid: f8a5d86c4ae2e74498321920864d2efb, type: 3}
-  kuusi_Up: {fileID: 5478185226996596222, guid: c7b109ef5f9dd2b41bbe24ade05cfe5c, type: 3}
-  kuusi_Middle: {fileID: 7286650436880529142, guid: 29f71c7281aea6c4fb620bdf0c2ed202, type: 3}
-  kuusi_Midup: {fileID: 7941477437254985255, guid: 8ca2f192ae87532459baeedf3fa87376, type: 3}
-  w_Left: {fileID: 2355235757387355295, guid: 75da1f2382ed16c42806e0a231c78672, type: 3}
-  w_Middle: {fileID: 5991759819864380607, guid: fffd2a4c88ca79e4696fd18063d88400, type: 3}
-  w_Right: {fileID: 1867809247468260441, guid: 35e8fb74a9f8200488a8a2d02444ac65, type: 3}
-  w_MidRight: {fileID: 2676017080126662696, guid: f79b02090925cb34f83ea3db5cf794c3, type: 3}
-  w_MidMid: {fileID: 6827301514990771207, guid: 6aad3920e59012946981c1db569c0754, type: 3}
-  w_MidLeft: {fileID: 526603675699774564, guid: 518551405d124ed449cdcac167d5c1c7, type: 3}
-  w_UpLeft: {fileID: 6639995082239840729, guid: 5b25f755a25bc2847b21e54d7979206a, type: 3}
-  w_UpMid: {fileID: 4846946402328599111, guid: 742814b6964ac5b428cc3bdd3f215b7c, type: 3}
-  W_UpRight: {fileID: 4387517699387901530, guid: c8580b074eb7d10479ff8302b79c8255, type: 3}
-  spruce1: {fileID: 5079327376055468939, guid: cb3af0811d9ab174c8cf89c8c778c7e9, type: 3}
-  spruce2: {fileID: 1486550241564588269, guid: 5a7ca341f8a245a4c89bb3b3ad19bc0d, type: 3}
-  spruce3: {fileID: 5046791662663475059, guid: 67cbd630b8ce8374f9c27778b68f9fce, type: 3}
-  activeFires: []
-  Ashes: []
   player: {fileID: 0}
+  burnedParticle: {fileID: 7807590792319863717, guid: 4add0518b592186448563461ec175902, type: 3}
+  activeFires: []
   area:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 0, y: 0, z: 0}
-  block: {fileID: 0}
   burnRadius: 1.5
   scoreCounter: {fileID: 0}
   bounds:

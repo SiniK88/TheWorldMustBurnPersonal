@@ -52,6 +52,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 45f192bf23444b742bec02db091494c8, type: 2}
   - {fileID: 11400000, guid: 55f15f4f8b312824392a0ffc54ca01f4, type: 2}
   - {fileID: 11400000, guid: d4d1f35511820c44fbcba8d6c04120b5, type: 2}
+  burned: {fileID: 0}
   spreadChange: 100
   spreadInterwall: 1
   burnTime: 2

@@ -92,7 +92,7 @@ public class AshTilesColliding : MonoBehaviour
             fade = 0f;
                 isDissolving = false;
                 Destroy(this.gameObject);
-                fireManager.Ashes.Remove(gameObject);
+                //fireManager.Ashes.Remove(gameObject);
 
             if (go != null) {
                 foreach (var gg in go) {
@@ -115,7 +115,7 @@ public class AshTilesColliding : MonoBehaviour
             fade = 0f;
             isDissolving = false;
             Destroy(gameObject);
-            fireManager.Ashes.Remove(gameObject);
+            //fireManager.Ashes.Remove(gameObject);
         }
         dissolveMat.SetFloat("_Dissolve", fade);
         //

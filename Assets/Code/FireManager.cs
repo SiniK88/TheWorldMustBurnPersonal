@@ -8,8 +8,7 @@ public class FireManager : MonoBehaviour
     [SerializeField]
     private Tilemap map;
 
-    [SerializeField]
-    private TileBase ashTile, ashTilePile, ashTileTreeBase, ashTileTreeLeft, ashTileTreeRight, ashTileTreeMiddle;
+    public Tilemap mapMoving;
 
     [SerializeField]
     private MapManager mapManager;
@@ -20,31 +19,24 @@ public class FireManager : MonoBehaviour
     [SerializeField]
     private Fire firePrefabup;
 
-   Fire newFire, newFire2;
+    [SerializeField]
+    private FireMoving firePrefab2;
+
+    [SerializeField]
+    private FireMoving firePrefabup2;
+
+    Fire newFire, newFire2;
+    FireMoving newFire3, newFire4;
 
     public GameObject allFires;
 
-    [SerializeField]
-    private FireNoCollider firePrefabNoCol;
 
-    [SerializeField]
-    private GameObject ashTilePileP, ashTileTreeBaseP, ashTileTreeLeftP, ashTileTreeRightP, ashTileTreeMiddleP,
-        spruce1, spruce2, spruce3;
-        
-
-    // maybe we need to add fires to this list from other places as well
-    public List<Vector3Int> activeFires = new List<Vector3Int>();
-    //public List<Vector3Int> activeFiresNoCol = new List<Vector3Int>();
-
-    public List<GameObject> Ashes = new List<GameObject>();
     public Transform player;
+    public Transform burnedParticle;
 
-    Vector3Int playerPosition;
-    Vector3Int radarRangeSize;
-    Vector3 radarMaxRange = new Vector3(2f, 1f, 0);
+    public List<Vector3Int> activeFires = new List<Vector3Int>();
 
     public BoundsInt area;
-    public Transform block;
 
     public float burnRadius = 1.5f;
 
@@ -58,6 +50,8 @@ public class FireManager : MonoBehaviour
         Vector3 playerPosition = player.transform.position;
         
         map = GameObject.FindGameObjectWithTag("Map").GetComponent<Tilemap>();
+        mapMoving = GameObject.FindGameObjectWithTag("MovingMap").GetComponent<Tilemap>();
+
         mapManager = GameObject.FindGameObjectWithTag("MapManager").GetComponent<MapManager>();
         scoreCounter = FindObjectOfType<ScoreCounter>();
     }
@@ -81,6 +75,23 @@ public class FireManager : MonoBehaviour
         }
     }
 
+    public void TryToSpreadMoving(Vector3Int position, float spreadChange) {
+        for (int i = position.x - 1; i < position.x + 2; i++) {
+            for (int j = position.y - 1; j < position.y + 2; j++) {
+                TryToBurnTile(new Vector3Int(i, j, 0));
+            }
+        }
+
+        void TryToBurnTile(Vector3Int tilePostion) {
+            if (activeFires.Contains(tilePostion)) return;
+            TileData data = mapManager.GetTileDataMoving(tilePostion);
+
+            if (data != null && data.canBurn) {
+                if (Random.Range(50f, 100f) <= data.spreadChange)
+                    SetTileOnFireMoving(tilePostion, data);
+            }
+        }
+    }
 
     public void SetTileOnFire(Vector3Int tilePosition, TileData data) {
 
@@ -102,7 +113,27 @@ public class FireManager : MonoBehaviour
             newFire2.StartBurning(tilePosition, data, this);
             activeFires.Add(tilePosition);
         } 
+        //activeFires.Add(tilePosition);
+    }
 
+    public void SetTileOnFireMoving(Vector3Int tilePosition, TileData data) {
+
+        Vector3Int tempTilepos = tilePosition;
+        tempTilepos.y -= 1;
+        TileData dataunder = mapManager.GetTileDataMoving(tempTilepos);
+        if (mapMoving.HasTile(tempTilepos) && dataunder.groudTile == true) {
+            newFire3 = Instantiate(firePrefab2);
+            newFire3.transform.SetParent(allFires.transform);
+            newFire3.transform.position = mapMoving.GetCellCenterWorld(tilePosition);
+            newFire3.StartBurning(tilePosition, data, this);
+            activeFires.Add(tilePosition);
+        } else {
+            newFire4 = Instantiate(firePrefabup2);
+            newFire4.transform.SetParent(allFires.transform);
+            newFire4.transform.position = mapMoving.GetCellCenterWorld(tilePosition);
+            newFire4.StartBurning(tilePosition, data, this);
+            activeFires.Add(tilePosition);
+        }
         //activeFires.Add(tilePosition);
     }
 
@@ -110,15 +141,9 @@ public class FireManager : MonoBehaviour
     private void Update() {
 
         BurnFromPlayerPosition();
-
-        //UpdateProximityArray();
-        /*DifferentDirectionBurnX(-1);
-        DifferentDirectionBurnX(1);
-        DifferentDirectionBurnY(-1);
-        DifferentDirectionBurnY(1);*/
-
+        BurnFromPlayerPositionMoving();
         //var hitP = map.GetComponent<SparksBurnTiles>().hitPosition;
-        //print(hitP);
+
 
     }
 
@@ -160,28 +185,27 @@ public class FireManager : MonoBehaviour
         }
     }
 
+    void BurnFromPlayerPositionMoving() {
+        playerPosition2 = player.transform.position;
+        Vector3Int playergridPos = mapMoving.WorldToCell(playerPosition2);
 
-    void DifferentDirectionBurnX(int added) {
-        Vector2 playerPosition = player.transform.position;
-        Vector3Int playergridPos = map.WorldToCell(playerPosition);
-        playergridPos.x -= added;
+        int gr = Mathf.FloorToInt(burnRadius + 0.5f);
+        //var bounds = new BoundsInt(playergridPos, new Vector3Int(gr * 2 + 1, gr * 2 + 1, 1));
+        bounds = new BoundsInt(playergridPos.x - gr, playergridPos.y - gr, 0, gr * 2 + 1, gr * 2 + 1, 1);
 
-        TileData data = mapManager.GetTileData(playergridPos);
-        if (map.HasTile(playergridPos) && data.canBurn == true) {
-            if (activeFires.Contains(playergridPos)) return; // ei sytytet‰ palavaa uudestaan
-            SetTileOnFire(playergridPos, data);
-        }
-    }
+        var rsq = burnRadius * burnRadius;
 
-    void DifferentDirectionBurnY(int added) {
-        Vector2 playerPosition = player.transform.position;
-        Vector3Int playergridPos = map.WorldToCell(playerPosition);
-        playergridPos.y -= added;
+        foreach (var gpos in bounds.allPositionsWithin) {
+            pos = (Vector2)mapMoving.CellToWorld(gpos) + Vector2.one * 0.5f;
+            TileData data = mapManager.GetTileDataMoving(gpos);
+            if (rsq >= (playerPosition2 - pos).sqrMagnitude) {
 
-        TileData data = mapManager.GetTileData(playergridPos);
-        if (map.HasTile(playergridPos) && data.canBurn == true) {
-            if (activeFires.Contains(playergridPos)) return; // ei sytytet‰ palavaa uudestaan
-            SetTileOnFire(playergridPos, data);
+                Debug.DrawLine(playerPosition2, pos, Color.white);
+                if (mapMoving.HasTile(gpos) && data.canBurn == true) {
+                    if (activeFires.Contains(gpos)) return; // ei sytytet‰ palavaa uudestaan
+                    SetTileOnFireMoving(gpos, data);
+                }
+            } else Debug.DrawLine(playerPosition2, pos, Color.red);
         }
     }
 
@@ -190,70 +214,57 @@ public class FireManager : MonoBehaviour
         GameObject ashT = Instantiate(pref);
         ashT.transform.position = map.GetCellCenterWorld(tilePosition);
         ashT.transform.SetParent(allFires.transform);
-        //activeAshes.Add(tilePosition);
-        //Ashes.Add(ashT);
+
     }
 
 
-    void UpdateProximityArray() {
-        // UPDATE PLAYER POSITION - USED TO DETERMINE THE STARTING POINT OF THE "ARRAY"
-        playerPosition.x = (int)player.position.x;
-        playerPosition.y = (int)player.position.y;
-
-        // UPDATE RADAR MAX RANGE - USED TO DETERMINE THE SIZE OF THE "ARRAY"
-        radarRangeSize.x = (int)radarMaxRange.x;
-        radarRangeSize.y = (int)radarMaxRange.y;
-
-        // CHECK FOR TILES AROUND THE PLAYER WITH A MAX DISTANCE BASED ON radarMaxRange
-        for (int y = playerPosition.y - radarRangeSize.y; y < (playerPosition.y + radarRangeSize.y); y++) {
-            for (int x = playerPosition.x - radarRangeSize.x; x < (playerPosition.x + radarRangeSize.x); x++) {
-                Vector3 tilePosition = new Vector3(x, y, 0);
-                Vector3Int tilePositionInt = new Vector3Int(Mathf.RoundToInt(tilePosition.x), Mathf.RoundToInt(tilePosition.y), 0);
-                Tile tile = map.GetTile<Tile>(tilePositionInt);
-                TileData data = mapManager.GetTileData(tilePositionInt);
-
-                if (map.HasTile(tilePositionInt) && data.canBurn == true) {
-                    if (activeFires.Contains(tilePositionInt)) return; // ei sytytet‰ palavaa uudestaan
-                    SetTileOnFire(tilePositionInt, data);
-                }
-            }
-        }
-    }
 
 
     public void FinishedBurning(Vector3Int position) {
         TileData data = mapManager.GetTileData(position);
 
+        BurnedParticles(position);
+
         map.SetTile(position, null);
         scoreCounter.scoreValue += 1;
-
-        var strings = new List<string> { "TreeBase", "TreeLeft", "TreeRight", "BushesTiles", "TreeMiddle", 
-        "Spruce1","Spruce2", "Spruce3"
-        };
-
-        var prefabs = new List<GameObject> { ashTileTreeBaseP, ashTileTreeLeftP, ashTileTreeRightP, ashTilePileP, ashTileTreeMiddleP,
-         spruce1, spruce2, spruce3
-        };
 
         if (!data.leavesTile) {
             //var idx = strings.IndexOf(data.name);
             //NewAshTile(position, prefabs[idx]);
+            NewAshTile(position, data.burned);
+        }
+        activeFires.Remove(position);
+    }
 
+    public void FinishedBurningMoving(Vector3Int position) {
+        TileData data = mapManager.GetTileDataMoving(position);
+
+        BurnedParticles(position);
+        mapMoving.SetTile(position, null);
+        scoreCounter.scoreValue += 1;
+
+        if (!data.leavesTile) {
             NewAshTile(position, data.burned);
         }
         activeFires.Remove(position);
     }
 
 
- 
+    void BurnedParticles( Vector3 posit ) {
+        var EndParticleclone = Instantiate(burnedParticle,posit , transform.rotation);
+        Destroy(EndParticleclone.gameObject, 1.5f);
+
+    }
 
     // t‰‰ ainakin toimii :) mutta ei ehk‰ paras tapa
     public int GetTileAmountSprite() {
         int amount = 0;
         // loop through all of the tiles        
         BoundsInt bounds = map.cellBounds;
+        BoundsInt bounds2 = mapMoving.cellBounds;
         foreach (Vector3Int pos in bounds.allPositionsWithin) {
             TileData data = mapManager.GetTileData(pos);
+            TileData data2 = mapManager.GetTileDataMoving(pos);
             Tile tile = map.GetTile<Tile>(pos);
             if (tile != null) {
                 if (data.canBurn == true && data.secret == false) {
@@ -261,16 +272,17 @@ public class FireManager : MonoBehaviour
                 }
             }
         }
-        /*BoundsInt boundsNoCol = noCollidermap.cellBounds;
-        foreach (Vector3Int pos in boundsNoCol.allPositionsWithin) {
-            //TileData dataNoCol = mapManager.GetTileDataNoCollider(pos);
-            Tile tileNoCol = noCollidermap.GetTile<Tile>(pos);
-            if (tileNoCol != null) {
-                if (dataNoCol.canBurn == true) {
+
+        foreach (Vector3Int pos in bounds2.allPositionsWithin) {
+            TileData data2 = mapManager.GetTileDataMoving(pos);
+            Tile tile = mapMoving.GetTile<Tile>(pos);
+            if (tile != null) {
+                if (data2.canBurn == true && data2.secret == false) {
                     amount += 1;
                 }
             }
-        }*/
+        }
+
         Debug.Log(amount);
         return amount;
     }

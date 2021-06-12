@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireNoCollider : MonoBehaviour
+public class FireMoving : MonoBehaviour
 {
     private Vector3Int position;
     TileData data;
@@ -10,7 +10,7 @@ public class FireNoCollider : MonoBehaviour
 
     private float burnTimeCounter, spreadInterwallCounter;
 
-    /*public void StartBurningNoCol(Vector3Int position, TileData data, FireManager fm) {
+    public void StartBurning(Vector3Int position, TileData data, FireManager fm) {
         this.position = position;
         this.data = data;
         fireManager = fm;
@@ -22,16 +22,16 @@ public class FireNoCollider : MonoBehaviour
     private void Update() {
         burnTimeCounter -= Time.deltaTime;
         if (burnTimeCounter <= 0) {
-            fireManager.FinishedBurningNoCol(position);
+            fireManager.FinishedBurningMoving(position);
             Destroy(gameObject);
         }
 
         spreadInterwallCounter -= Time.deltaTime;
         if (spreadInterwallCounter <= 0) {
             spreadInterwallCounter = data.spreadInterwall;
-            fireManager.TryToSpreadNoCol(position, data.spreadChange);
+            fireManager.TryToSpreadMoving(position, data.spreadChange);
             fireManager.TryToSpread(position, data.spreadChange);
         }
 
-    }*/
+    }
 }
