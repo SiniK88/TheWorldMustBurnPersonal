@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MenuNavigation : MonoBehaviour
 {
-    public GameObject levelMenu, deathMenu, levelEndMenu, pauseMenu;
+    public GameObject levelMenu, deathMenu, levelEndMenu, pauseMenu, mixMenuStuff;
     public GameObject levelFirstButton, levelEndFirstButton, DeathFirstButton, PauseFirstButton;
 
     public GameObject lv1Score, lv2Score, lv3Score;
@@ -15,9 +15,31 @@ public class MenuNavigation : MonoBehaviour
     public float fadingSpeed = 0.5f;
     public bool fadeboolLevel, fadeboolDeath = false;
 
+    public GameObject player;
+
+    public GameObject[] levels;
+
+    private void Start() {
+        levels = GameObject.FindGameObjectsWithTag("Level");
+    }
 
     private void Update() {
-        if (EventSystem.current.currentSelectedGameObject != null) {
+
+        if(player.transform.position == levels[0].transform.position) {
+            lv1Score.SetActive(true);
+            lv2Score.SetActive(false);
+            lv3Score.SetActive(false);
+        } else if(player.transform.position == levels[1].transform.position) {
+            lv1Score.SetActive(false);
+            lv2Score.SetActive(true);
+            lv3Score.SetActive(false);
+        } else if (player.transform.position == levels[2].transform.position) {
+            lv1Score.SetActive(false);
+            lv2Score.SetActive(false);
+            lv3Score.SetActive(true);
+        }
+
+            /*if (EventSystem.current.currentSelectedGameObject != null) {
             if(EventSystem.current.currentSelectedGameObject.name == "Level1Button") {
                 lv1Score.SetActive(true);
                 lv2Score.SetActive(false);
@@ -32,7 +54,7 @@ public class MenuNavigation : MonoBehaviour
                 lv3Score.SetActive(true);
             }
             //Debug.Log(EventSystem.current.currentSelectedGameObject.name);
-        }
+        }*/
     }
 
 
@@ -89,6 +111,14 @@ public class MenuNavigation : MonoBehaviour
         StartCoroutine(DoFade(closeLevelC, closeLevelC.alpha, fadeboolLevel ? 1 : 0));
         fadeboolLevel = !fadeboolLevel;
 
+    }
+
+    public void CloseMixedMenuStuff() {
+        mixMenuStuff.SetActive(false);
+    }
+
+    public void OpenMixedMenuStuff() {
+        mixMenuStuff.SetActive(true);
     }
 
 

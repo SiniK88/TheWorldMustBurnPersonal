@@ -24,6 +24,8 @@ public class MovingOnLevelsMap : MonoBehaviour
     public int levelNumber;
     public string levelCode;
 
+    public LevelSelector levelSelector;
+    public MenuNavigation menuNav;
     void Start()
     {
         
@@ -66,6 +68,24 @@ public class MovingOnLevelsMap : MonoBehaviour
                 StartCoroutine( Move(leftDestination));
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Space)) {
+
+            SelectLevel(1);
+            SelectLevel(2);
+            SelectLevel(3);
+
+
+            //if (currentLevel == true && levelNumber == 1) {
+            //    levelSelector.LoadLevel1();
+            //}
+            //if (currentLevel == true && levelNumber == 2) {
+            //    levelSelector.LoadLevel2();
+            //}
+            //if (currentLevel == true && levelNumber == 3) {
+            //    levelSelector.LoadLevel3();
+            //}
+        }
     }
 
     IEnumerator Move( GameObject direction ) {
@@ -73,6 +93,22 @@ public class MovingOnLevelsMap : MonoBehaviour
         while (player.transform.position != direction.transform.position) {
             player.transform.position = Vector3.MoveTowards(player.transform.position, direction.transform.position, 3f * Time.deltaTime);
             yield return null;
+        }
+    }
+
+    private void SelectLevel(int i) {
+        if(currentLevel == true && levelNumber == i) {
+            menuNav.CloseLevelMenu();
+            menuNav.CloseMixedMenuStuff();
+            if(i == 1) {
+                levelSelector.LoadLevel1();
+            }
+            if(i == 2) {
+                levelSelector.LoadLevel2();
+            }
+            if(i == 3) {
+                levelSelector.LoadLevel3();
+            }
         }
     }
 
