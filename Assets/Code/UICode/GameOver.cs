@@ -4,7 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Application.Quit();
+        }
+        if (Input.GetKeyDown(KeyCode.O)) {
+            SceneManager.LoadScene(0);
+            Time.timeScale = 1;
+        }
 
+    }
 
     public void Retry() {
         SceneManager.LoadScene(0);
