@@ -19,6 +19,7 @@ TagManager:
   - PlayerBody
   - MovingMap
   - Level
+  - Locks
   layers:
   - Default
   - TransparentFX

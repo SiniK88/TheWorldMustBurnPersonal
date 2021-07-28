@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5122752516184926209}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -44,14 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map: {fileID: 0}
+  mapMoving: {fileID: 0}
   mapManager: {fileID: 0}
-  firePrefab: {fileID: 8579498863020270067, guid: a017639beb79e9c4fb3ac0e76e643b19, type: 3}
-  firePrefabup: {fileID: 0}
-  firePrefab2: {fileID: 7476430175135693217, guid: 5801fac8aac8aae43a0ad5c561fbc55d, type: 3}
+  firePrefab: {fileID: -5825349054958040398, guid: 56ecef7a31f7ee745b45c29eed940e68, type: 3}
+  firePrefabup: {fileID: -5825349054958040398, guid: 56ecef7a31f7ee745b45c29eed940e68, type: 3}
+  firePrefab2: {fileID: 4582448298955617623, guid: 06509c81d5f1ab147bc4d2fd993f7e64, type: 3}
   firePrefabup2: {fileID: 4582448298955617623, guid: 06509c81d5f1ab147bc4d2fd993f7e64, type: 3}
   allFires: {fileID: 0}
   player: {fileID: 0}
-  burnedParticle: {fileID: 7807590792319863717, guid: 4add0518b592186448563461ec175902, type: 3}
+  burnedParticle: {fileID: 7769672079985295185, guid: 93820cf5f53efc84fbd6387ae33b2422, type: 3}
   activeFires: []
   area:
     m_Position: {x: 0, y: 0, z: 0}

@@ -25,7 +25,7 @@ public class BurningMovingObject : MonoBehaviour
     void Start()
     {
 
-        map = GameObject.FindGameObjectWithTag("Map").GetComponent<Tilemap>();
+        //map = GameObject.FindGameObjectWithTag("Map").GetComponent<Tilemap>();
         mapManager = GameObject.FindGameObjectWithTag("MapManager").GetComponent<MapManager>();
         fireManager = GameObject.FindGameObjectWithTag("FireManager").GetComponent<FireManager>();
         burnO = GetComponent<BurningMovingObject>();

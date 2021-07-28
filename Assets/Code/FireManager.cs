@@ -16,17 +16,13 @@ public class FireManager : MonoBehaviour
     [SerializeField]
     private Fire firePrefab;
 
-    [SerializeField]
-    private Fire firePrefabup;
 
     [SerializeField]
     private FireMoving firePrefab2;
 
-    [SerializeField]
-    private FireMoving firePrefabup2;
 
-    Fire newFire, newFire2;
-    FireMoving newFire3, newFire4;
+    Fire newFire;
+    FireMoving newFire3;
 
     public GameObject allFires;
 
@@ -97,10 +93,16 @@ public class FireManager : MonoBehaviour
 
         Vector3Int tempTilepos = tilePosition;
         tempTilepos.y -= 1;
-        TileData dataunder = mapManager.GetTileData(tempTilepos);
+        //TileData dataunder = mapManager.GetTileData(tempTilepos);
         //Fire newFire = Instantiate(firePrefab);
         //Fire newFire2 = Instantiate(firePrefabup);
-        if (map.HasTile(tempTilepos) && dataunder.groudTile == true) {
+        newFire = Instantiate(firePrefab);
+        newFire.transform.SetParent(allFires.transform);
+        newFire.transform.position = map.GetCellCenterWorld(tilePosition);
+        newFire.StartBurning(tilePosition, data, this);
+        activeFires.Add(tilePosition);
+
+        /*if (map.HasTile(tempTilepos) && dataunder.groudTile == true) {
             newFire = Instantiate(firePrefab);
             newFire.transform.SetParent(allFires.transform);
             newFire.transform.position = map.GetCellCenterWorld(tilePosition);
@@ -112,7 +114,7 @@ public class FireManager : MonoBehaviour
             newFire2.transform.position = map.GetCellCenterWorld(tilePosition);
             newFire2.StartBurning(tilePosition, data, this);
             activeFires.Add(tilePosition);
-        } 
+        } */ // this pne had different fire animation for firest touching the ground
         //activeFires.Add(tilePosition);
     }
 
@@ -120,8 +122,16 @@ public class FireManager : MonoBehaviour
 
         Vector3Int tempTilepos = tilePosition;
         tempTilepos.y -= 1;
-        TileData dataunder = mapManager.GetTileDataMoving(tempTilepos);
-        if (mapMoving.HasTile(tempTilepos) && dataunder.groudTile == true) {
+        //TileData dataunder = mapManager.GetTileDataMoving(tempTilepos);
+
+        newFire3 = Instantiate(firePrefab2);
+        newFire3.transform.SetParent(allFires.transform);
+        newFire3.transform.position = mapMoving.GetCellCenterWorld(tilePosition);
+        newFire3.StartBurning(tilePosition, data, this);
+        activeFires.Add(tilePosition);
+
+
+        /*if (mapMoving.HasTile(tempTilepos) && dataunder.groudTile == true) {
             newFire3 = Instantiate(firePrefab2);
             newFire3.transform.SetParent(allFires.transform);
             newFire3.transform.position = mapMoving.GetCellCenterWorld(tilePosition);
@@ -133,7 +143,7 @@ public class FireManager : MonoBehaviour
             newFire4.transform.position = mapMoving.GetCellCenterWorld(tilePosition);
             newFire4.StartBurning(tilePosition, data, this);
             activeFires.Add(tilePosition);
-        }
+        }*/
         //activeFires.Add(tilePosition);
     }
 
@@ -226,7 +236,9 @@ public class FireManager : MonoBehaviour
         BurnedParticles(position);
 
         map.SetTile(position, null);
-        scoreCounter.scoreValue += 1;
+        if (scoreCounter) {
+            scoreCounter.scoreValue += 1;
+        }
 
         if (!data.leavesTile) {
             //var idx = strings.IndexOf(data.name);
@@ -241,7 +253,9 @@ public class FireManager : MonoBehaviour
 
         BurnedParticles(position);
         mapMoving.SetTile(position, null);
-        scoreCounter.scoreValue += 1;
+        if (scoreCounter) {
+            scoreCounter.scoreValue += 1;
+        }
 
         if (!data.leavesTile) {
             NewAshTile(position, data.burned);

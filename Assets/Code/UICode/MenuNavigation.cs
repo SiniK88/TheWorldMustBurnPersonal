@@ -18,14 +18,16 @@ public class MenuNavigation : MonoBehaviour
     public GameObject player;
 
     public GameObject[] levels;
+    public GameObject[] locks;
 
     private void Start() {
         levels = GameObject.FindGameObjectsWithTag("Level");
+        locks = GameObject.FindGameObjectsWithTag("Locks");
     }
 
     private void Update() {
 
-        if(player.transform.position == levels[0].transform.position) {
+        /*if(player.transform.position == levels[0].transform.position) {
             lv1Score.SetActive(true);
             lv2Score.SetActive(false);
             lv3Score.SetActive(false);
@@ -37,8 +39,11 @@ public class MenuNavigation : MonoBehaviour
             lv1Score.SetActive(false);
             lv2Score.SetActive(false);
             lv3Score.SetActive(true);
-        }
+        }*/
 
+        if (Input.GetKeyDown(KeyCode.U)) {
+            UnlockAllLevels();
+        }
             /*if (EventSystem.current.currentSelectedGameObject != null) {
             if(EventSystem.current.currentSelectedGameObject.name == "Level1Button") {
                 lv1Score.SetActive(true);
@@ -133,4 +138,16 @@ public class MenuNavigation : MonoBehaviour
             yield return null;
         }
     }
+
+    public void UnlockAllLevels() {
+        for (int j = 0; j < locks.Length; j++) {
+            locks[j].SetActive(false);
+        }
+
+        for (int i= 0; i < levels.Length; i++) {
+            levels[i].GetComponent<MovingOnLevelsMap>().locked = false;
+
+        }
+    }
+
 } // class

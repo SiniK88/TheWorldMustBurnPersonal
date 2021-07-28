@@ -66,6 +66,7 @@ public class LevelEnd : MonoBehaviour
             EndLevelScoreTextHighScore = GameObject.Find("HighScoreEndText").GetComponent<Text>();
             LevelEndTextCommon();
             scoreCounter.RegisterNewScore(LevelNumber);
+            scoreCounter.RegisterScore();
             anim.Play("FadeOut");
             //scoreCounter.scoreValue = 0;
             //Destroy(gameObject,3f);
@@ -90,38 +91,20 @@ public class LevelEnd : MonoBehaviour
             EndLevelScoreTextCommon.text = "You burned more than 100 %, how is that possible? " + scoreCounter.runningScore + " %";
         }
 
-        if (LevelNumber == 1) {
-            if (((scoreCounter.runningScore >= 50 && scoreCounter.runningScore < 75) && (scoreCounter.runningScore > storeScores.l1HighScorePronce * 100))) {
-                EndLevelScoreTextHighScore.text = "New highscore  for  bronze  category";
-            }else if (((scoreCounter.runningScore >= 75 && scoreCounter.runningScore < 100) && (scoreCounter.runningScore > (storeScores.l1HighScoreSilver * 100)))) {
-                EndLevelScoreTextHighScore.text = "New highscore for  the  Silver  category";
-            }else if ((scoreCounter.runningScore >= 100 && (scoreCounter.runningScore > (storeScores.l1HighScoreGold * 100)))) {
-                EndLevelScoreTextHighScore.text = "New highscore for the Gold category";
-            } 
-            else EndLevelScoreTextHighScore.text = "";
-        } 
 
-        if (LevelNumber == 2) {
-            if ((scoreCounter.runningScore >= 50 && scoreCounter.runningScore < 75 && scoreCounter.runningScore > storeScores.l2HighScorePronce * 100)) {
-                EndLevelScoreTextHighScore.text = "New highscore for bronze category";
-            } else if (((scoreCounter.runningScore >= 75 && scoreCounter.runningScore < 100) && scoreCounter.runningScore > (storeScores.l2HighScoreSilver * 100))) {
-                EndLevelScoreTextHighScore.text = "New highscore for  the  Silver  category";
-            } else if ((scoreCounter.runningScore >= 100 && scoreCounter.runningScore > storeScores.l2HighScoreGold * 100)) {
-                EndLevelScoreTextHighScore.text = "New highscore for the Gold category";
-            } 
-            else EndLevelScoreTextHighScore.text = "";
-        }
-
-        if (LevelNumber == 3) {
-            if (((scoreCounter.runningScore >= 50 && scoreCounter.runningScore < 75) && scoreCounter.runningScore > storeScores.l3HighScorePronce * 100)) {
-                EndLevelScoreTextHighScore.text = "New highscore for bronze category";
-            } else if (((scoreCounter.runningScore >= 75 && scoreCounter.runningScore < 100) && scoreCounter.runningScore > (storeScores.l3HighScoreSilver * 100))) {
-                EndLevelScoreTextHighScore.text = "New highscore for the Silver category";
-            }else if ((scoreCounter.runningScore >= 100 && scoreCounter.runningScore > (storeScores.l3HighScoreGold * 100))) {
-                EndLevelScoreTextHighScore.text = "New highscore for the Gold category";
+        for(int i = 0; i < storeScores.levels.Length; i++) {
+            if(LevelNumber == i + 1) {
+                if (((scoreCounter.runningScore >= 50 && scoreCounter.runningScore < 75) && (scoreCounter.runningScore > storeScores.bronceHighScores[i] * 100))) {
+                    EndLevelScoreTextHighScore.text = "New highscore  for  bronze  category";
+                } else if (((scoreCounter.runningScore >= 75 && scoreCounter.runningScore < 100) && (scoreCounter.runningScore > (storeScores.silverHighScores[i] * 100)))) {
+                    EndLevelScoreTextHighScore.text = "New highscore for  the  Silver  category";
+                } else if ((scoreCounter.runningScore >= 100 && (scoreCounter.runningScore > (storeScores.goldHighScores[i] * 100)))) {
+                    EndLevelScoreTextHighScore.text = "New highscore for the Gold category";
+                } else EndLevelScoreTextHighScore.text = "";
             }
-            else EndLevelScoreTextHighScore.text = "";
         }
+
+
 
     }
 

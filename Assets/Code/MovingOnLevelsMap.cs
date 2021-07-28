@@ -12,6 +12,12 @@ public class MovingOnLevelsMap : MonoBehaviour
     public GameObject leftDestination;
     public GameObject rightDestination;
 
+    [Header("Final Destinations")]
+    public GameObject upDestinationFinal;
+    public GameObject downDestinationFinal;
+    public GameObject leftDestinationFinal;
+    public GameObject rightDestinationFinal;
+
 
     [Header("Stuff")]
     public GameObject player;
@@ -44,26 +50,26 @@ public class MovingOnLevelsMap : MonoBehaviour
         }
 
         if((Input.GetAxis("Vertical") > 0)) {
-            if(upDestination != null && upDestination.activeInHierarchy) {
+            if(upDestination != null && upDestination.activeInHierarchy && upDestinationFinal.GetComponent<MovingOnLevelsMap>().locked == false) {
                 currentLevel = false;
                 StartCoroutine( Move( upDestination));
             }
         }
 
         else if(Input.GetAxis("Vertical") < 0) {
-            if(downDestination != null && downDestination.activeInHierarchy) {
+            if(downDestination != null && downDestinationFinal.GetComponent<MovingOnLevelsMap>().locked == false) {
                 currentLevel = false;
                 StartCoroutine(Move( downDestination));
             }
         }
 
         else if(Input.GetAxis("Horizontal") > 0) {
-            if(rightDestination != null && rightDestination.activeInHierarchy) {
+            if(rightDestination != null &&  rightDestinationFinal.GetComponent<MovingOnLevelsMap>().locked == false) {
                 currentLevel = false;
                 StartCoroutine(Move(rightDestination));
             }
         }else if(Input.GetAxis("Horizontal") < 0) {
-            if(leftDestination != null && leftDestination.activeInHierarchy) {
+            if(leftDestination != null &&  leftDestinationFinal.GetComponent<MovingOnLevelsMap>().locked == false) {
                 currentLevel = false;
                 StartCoroutine( Move(leftDestination));
             }
@@ -97,7 +103,7 @@ public class MovingOnLevelsMap : MonoBehaviour
     }
 
     private void SelectLevel(int i) {
-        if(currentLevel == true && levelNumber == i) {
+        if(currentLevel == true && levelNumber == i && locked == false) {
             menuNav.CloseLevelMenu();
             menuNav.CloseMixedMenuStuff();
             if(i == 1) {
