@@ -16,6 +16,7 @@ public class MapManager : MonoBehaviour
 
     public Dictionary<TileBase, TileData> dataFromTiles;
     public Dictionary<TileBase, TileData> dataFromTilesMoving;
+    public Dictionary<TileBase, TileData> dataFromTilesAll;
     public GameObject player;
 
     private void Start() {
@@ -28,6 +29,7 @@ public class MapManager : MonoBehaviour
     {
         dataFromTiles = new Dictionary<TileBase, TileData>();
         dataFromTilesMoving = new Dictionary<TileBase, TileData>();
+        dataFromTilesAll = new Dictionary<TileBase, TileData>();
 
         foreach (var tileData in tileDatas) {
             foreach (var tile in tileData.tiles) {
@@ -40,8 +42,21 @@ public class MapManager : MonoBehaviour
                 dataFromTilesMoving.Add(tile, tileData);
             }
         }
+
+
     }
 
+    public TileData GetTileDataAll(Vector3Int tilePosition) {
+        TileBase tile = map.GetTile(tilePosition);
+        TileBase tile2 = mapMoving.GetTile(tilePosition);
+        if (tile == null && tile2 == null)
+            return null;
+        else {
+            if (tile2 == null) {
+                return dataFromTilesAll[tile];
+            } else return dataFromTilesAll[tile2];
+        }
+    }
 
     public TileData GetTileData(Vector3Int tilePosition) {
         TileBase tile = map.GetTile(tilePosition);

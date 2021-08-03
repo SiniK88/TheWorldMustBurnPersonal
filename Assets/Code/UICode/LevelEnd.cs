@@ -25,13 +25,14 @@ public class LevelEnd : MonoBehaviour
     void Start()
     {
 
+
         tileAmount = fm.GetComponent<FireManager>().GetTileAmountSprite();
 
         menuNav = FindObjectOfType<MenuNavigation>(); 
         scoreCounter = FindObjectOfType<ScoreCounter>();
         gameTimer = FindObjectOfType<GameTimer>();
         storeScores = FindObjectOfType<StoreScores>();
-        playLoops = FindObjectOfType<PlayLoops>();
+       // playLoops = FindObjectOfType<PlayLoops>();
 
     }
 
@@ -57,8 +58,7 @@ public class LevelEnd : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Player")) {
             levelend = true;
-            
-            
+
             playLoops.StopLevelMusic();
 
             menuNav.OpenLevelEndMenu();
@@ -72,9 +72,9 @@ public class LevelEnd : MonoBehaviour
             //Destroy(gameObject,3f);
             Destroy(collision.transform.parent.gameObject,3f);
 
-
         }
     }
+
 
     void LevelEndTextCommon() {
         if(scoreCounter.runningScore < 50 && scoreCounter.runningScore > 0) {
@@ -103,9 +103,6 @@ public class LevelEnd : MonoBehaviour
                 } else EndLevelScoreTextHighScore.text = "";
             }
         }
-
-
-
     }
 
 }

@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 public class SparksBurnTiles : MonoBehaviour
 {
     public Tilemap map;
+    public Tilemap mapMoving;
 
     [SerializeField]
     private MapManager mapManager;
@@ -22,6 +23,7 @@ public class SparksBurnTiles : MonoBehaviour
     void Start()
     {
         map = GameObject.FindGameObjectWithTag("Map").GetComponent<Tilemap>();
+        mapMoving = GameObject.FindGameObjectWithTag("MovingMap").GetComponent<Tilemap>();
 
     }
 
@@ -54,15 +56,22 @@ public class SparksBurnTiles : MonoBehaviour
                 var hitPosInt = ToInt3(hitPosition);
 
                 TileData data = mapManager.GetTileData(hitPosInt);
+                TileData data2 = mapManager.GetTileDataMoving(hitPosInt);
 
                 if (map.HasTile(hitPosInt) && data.canBurn == true) {
                     if (fireManager.activeFires.Contains(hitPosInt)) return; // ei sytytetä palavaa uudestaan
                     fireManager.SetTileOnFire(hitPosInt, data);
                 }
+                if (mapMoving.HasTile(hitPosInt) && data2.canBurn == true) {
+                    if (fireManager.activeFires.Contains(hitPosInt)) return; // ei sytytetä palavaa uudestaan
+                    fireManager.SetTileOnFireMoving(hitPosInt, data2);
+                }
 
                 //InstantiateExplosion(hitPosInt, data, explosionPre);
                 InstantiateExplosion(hitPosInt, data, explosionPreSmall);
                 InstantiateExplosion(hitPosInt, data, explosionPreSmallest);
+                InstantiateExplosion(hitPosInt, data2, explosionPreSmall);
+                InstantiateExplosion(hitPosInt, data2, explosionPreSmallest);
             }
 
         }

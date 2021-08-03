@@ -28,6 +28,10 @@ public class AudioFW : MonoBehaviour
     public static void AdjustPitch(string id, float pitch) {
         instance.AdjustPitchImpl(id, pitch);
     }
+
+    public static void AdjustVolume(string id, float volume) {
+        instance.AdjustVolumeImpl(id, volume);
+    }
     void PlayImpl(string id) {
         if (!sfx.ContainsKey(id)) {
             Debug.LogWarning("No sound with ID " + id);
@@ -67,6 +71,15 @@ public class AudioFW : MonoBehaviour
             return;
         }
         loops[id].pitch = Mathf.Clamp(pitch, -3f, 3f);
+        //print("Pitch adjusted");
+    }
+
+    void AdjustVolumeImpl(string id, float volume) {
+        if (!loops.ContainsKey(id)) {
+            Debug.LogWarning("No sound with ID " + id);
+            return;
+        }
+        loops[id].volume = Mathf.Clamp(volume, 0f, 1f);
         //print("Pitch adjusted");
     }
     static public AudioFW instance {

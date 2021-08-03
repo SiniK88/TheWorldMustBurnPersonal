@@ -15,12 +15,8 @@ public class GameManager : MonoBehaviour
     public GameObject fm;
     PowerUpProjektile powerup;
 
-
-    public GameObject[] playerBody;
     void Start()
     {
-
-        playerBody = GameObject.FindGameObjectsWithTag("PlayerBody");
 
         player = GameObject.FindGameObjectWithTag("Player");
         powerup = FindObjectOfType<PowerUpProjektile>();

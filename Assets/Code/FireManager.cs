@@ -50,6 +50,8 @@ public class FireManager : MonoBehaviour
 
         mapManager = GameObject.FindGameObjectWithTag("MapManager").GetComponent<MapManager>();
         scoreCounter = FindObjectOfType<ScoreCounter>();
+
+        AudioFW.PlayLoop("FireBurningLoop");
     }
 
 
@@ -149,12 +151,13 @@ public class FireManager : MonoBehaviour
 
 
     private void Update() {
+        PlayFireSound();
 
         BurnFromPlayerPosition();
         BurnFromPlayerPositionMoving();
         //var hitP = map.GetComponent<SparksBurnTiles>().hitPosition;
 
-
+        
     }
 
     void BurnFromPlayerPosition() {
@@ -227,6 +230,10 @@ public class FireManager : MonoBehaviour
 
     }
 
+    public void PlayFireSound() {
+        
+        AudioFW.AdjustVolume("FireBurningLoop", (float)activeFires.Count/30);
+    }
 
 
 

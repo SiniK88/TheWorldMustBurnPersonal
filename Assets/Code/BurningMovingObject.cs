@@ -19,18 +19,16 @@ public class BurningMovingObject : MonoBehaviour
     public float burnRadius = 1.5f;
     BurningMovingObject burnO;
     // Start is called before the first frame update
-    SpriteRenderer sr;
-    Animator anim;
+
     public GameObject fire;
     void Start()
     {
 
-        //map = GameObject.FindGameObjectWithTag("Map").GetComponent<Tilemap>();
+        map = GameObject.FindGameObjectWithTag("Map").GetComponent<Tilemap>();
         mapManager = GameObject.FindGameObjectWithTag("MapManager").GetComponent<MapManager>();
         fireManager = GameObject.FindGameObjectWithTag("FireManager").GetComponent<FireManager>();
         burnO = GetComponent<BurningMovingObject>();
-        sr = GetComponentInChildren<SpriteRenderer>();
-        anim = GetComponentInChildren<Animator>();
+
         
     }
 

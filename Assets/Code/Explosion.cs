@@ -5,21 +5,21 @@ using UnityEngine.Tilemaps;
 public class Explosion : MonoBehaviour
 {
     public Tilemap map;
+    public Tilemap mapMoving;
 
     [SerializeField]
     private MapManager mapManager;
 
     [SerializeField]
-    private Fire firePrefab;
     public FireManager fireManager;
-    List<Vector3Int> trackedCells;
     public Vector3 hitPosition;
     public Transform player;
 
     void Start()
     {
-        trackedCells = new List<Vector3Int>();
-        map = GetComponent<Tilemap>();
+
+        map = GameObject.FindGameObjectWithTag("Map").GetComponent<Tilemap>();
+        mapMoving = GameObject.FindGameObjectWithTag("MovingMap").GetComponent<Tilemap>();
 
     }
 
@@ -49,14 +49,20 @@ public class Explosion : MonoBehaviour
                     }
                 }
 
-                print(" explo  " + hitPosition);
+                //print(" explo  " + hitPosition);
                 var hitPosInt = ToInt3(hitPosition);
-                print(" explo  " + hitPosInt);
+                //print(" explo  " + hitPosInt);
                 TileData data = mapManager.GetTileData(hitPosInt);
+                TileData data2 = mapManager.GetTileDataMoving(hitPosInt);
 
                 if (map.HasTile(hitPosInt) && data.canBurn == true) {
                     if (fireManager.activeFires.Contains(hitPosInt)) return; // ei sytytetä palavaa uudestaan
                     fireManager.SetTileOnFire(hitPosInt, data);
+                }
+
+                if (mapMoving.HasTile(hitPosInt) && data2.canBurn == true) {
+                    if (fireManager.activeFires.Contains(hitPosInt)) return; // ei sytytetä palavaa uudestaan
+                    fireManager.SetTileOnFireMoving(hitPosInt, data2);
                 }
             }
         }

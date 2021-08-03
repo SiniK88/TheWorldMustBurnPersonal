@@ -17,6 +17,7 @@ public class SparksMoving : MonoBehaviour
 
 
     public Tilemap map;
+    public Tilemap mapMoving;
 
     [SerializeField]
     private MapManager mapManager;
@@ -35,6 +36,7 @@ public class SparksMoving : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         map = GameObject.FindGameObjectWithTag("Map").GetComponent<Tilemap>();
+        mapMoving = GameObject.FindGameObjectWithTag("MovingMap").GetComponent<Tilemap>();
         mapManager = GameObject.FindGameObjectWithTag("MapManager").GetComponent<MapManager>();
         fireManager = GameObject.FindGameObjectWithTag("FireManager").GetComponent<FireManager>();
         //rb.velocity = launchDirection.normalized * speed;
@@ -88,6 +90,19 @@ public class SparksMoving : MonoBehaviour
                     fireManager.SetTileOnFire(gpos, data);
                 }
             } else Debug.DrawLine(playerPosition, pos, Color.red);
+        }
+
+        foreach (var gpos in bounds.allPositionsWithin) {
+            var pos = (Vector2)mapMoving.CellToWorld(gpos) + Vector2.one * 0.5f;
+            TileData data = mapManager.GetTileDataMoving(gpos);
+            if (rsq >= (playerPosition - pos).sqrMagnitude) {
+
+                Debug.DrawLine(playerPosition, pos, Color.white);
+                if (mapMoving.HasTile(gpos) && data.canBurn == true) {
+                    if (fireManager.activeFires.Contains(gpos)) return; // ei sytytetä palavaa uudestaan
+                    fireManager.SetTileOnFireMoving(gpos, data);
+                }
+            } //else Debug.DrawLine(playerPosition, pos, Color.red);
         }
     }
 }

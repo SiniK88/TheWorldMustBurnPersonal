@@ -61,7 +61,7 @@ public class PlayerHealth : MonoBehaviour
             player.GetComponent<RayCastPlayer>().enabled = false;
             //playerController.DeathAnim();
             //anim.Play("FadeIn");
-            anim.Play("FadeOut");
+            //anim.Play("FadeOut");
             Destroy(transform.parent.gameObject, 3f);
             menuNav.OpenDeathMenu();
 
