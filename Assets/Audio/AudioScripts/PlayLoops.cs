@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayLoops : MonoBehaviour
 {
-    LevelEnd levelEnd;
-    int levelNum;
+    public LevelEnd levelEnd;
+    public int levelNum;
 
     void Start()
     {
@@ -21,6 +21,10 @@ public class PlayLoops : MonoBehaviour
         if (levelNum == 3) {
             AudioFW.PlayLoop("Level3Forest");
         }
+
+        if (levelNum == 4) {
+            AudioFW.PlayLoop("Level2Cave");
+        }
     }
 
     public void StopLevelMusic() {
@@ -32,6 +36,9 @@ public class PlayLoops : MonoBehaviour
         }
         if (levelNum == 3) {
             AudioFW.StopLoop("Level3Forest");
+        }
+        if (levelNum == 4) {
+            AudioFW.StopLoop("Level2Cave");
         }
     }
 

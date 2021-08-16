@@ -20,6 +20,7 @@ TagManager:
   - MovingMap
   - Level
   - Locks
+  - CurrentLevel
   layers:
   - Default
   - TransparentFX

@@ -68,6 +68,10 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void DestroyLevel() {
+        Destroy(transform.parent.gameObject);
+    }
+
     // damege tarvii myös timerin jos voi ottaa enemmän kuin yhden damagen
     void TouchWaterY(int damage) {
         Vector2 playerPosition = player.transform.position;

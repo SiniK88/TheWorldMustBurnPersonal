@@ -32,6 +32,7 @@ public class MovingOnLevelsMap : MonoBehaviour
 
     public LevelSelector levelSelector;
     public MenuNavigation menuNav;
+    
     void Start()
     {
         
@@ -49,29 +50,43 @@ public class MovingOnLevelsMap : MonoBehaviour
             // press something and level loads
         }
 
-        if((Input.GetAxis("Vertical") > 0)) {
-            if(upDestination != null && upDestination.activeInHierarchy && upDestinationFinal.GetComponent<MovingOnLevelsMap>().locked == false) {
+        if ((Input.GetAxis("Vertical") > 0)) {
+            if (upDestination != null && upDestinationFinal.GetComponent<MovingOnLevelsMap>().locked == false) {
                 currentLevel = false;
-                StartCoroutine( Move( upDestination));
+                StartCoroutine(Move(upDestination));
             }
-        }
-
-        else if(Input.GetAxis("Vertical") < 0) {
-            if(downDestination != null && downDestinationFinal.GetComponent<MovingOnLevelsMap>().locked == false) {
+        } else if (Input.GetAxis("Vertical") < 0) {
+            if (downDestination != null && downDestinationFinal.GetComponent<MovingOnLevelsMap>().locked == false) {
                 currentLevel = false;
-                StartCoroutine(Move( downDestination));
+                StartCoroutine(Move(downDestination));
             }
-        }
-
-        else if(Input.GetAxis("Horizontal") > 0) {
-            if(rightDestination != null &&  rightDestinationFinal.GetComponent<MovingOnLevelsMap>().locked == false) {
+        } else if (Input.GetAxis("Horizontal") > 0) {
+            if (rightDestination != null && rightDestinationFinal.GetComponent<MovingOnLevelsMap>().locked == false) {
                 currentLevel = false;
                 StartCoroutine(Move(rightDestination));
             }
-        }else if(Input.GetAxis("Horizontal") < 0) {
-            if(leftDestination != null &&  leftDestinationFinal.GetComponent<MovingOnLevelsMap>().locked == false) {
+        } else if (Input.GetAxis("Horizontal") < 0) {
+            if (leftDestination != null && leftDestinationFinal.GetComponent<MovingOnLevelsMap>().locked == false) {
                 currentLevel = false;
-                StartCoroutine( Move(leftDestination));
+                StartCoroutine(Move(leftDestination));
+            }
+        } 
+
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) {
+            if (upDestination != null && upDestinationFinal.GetComponent<MovingOnLevelsMap>().locked == true) {
+                AudioFW.Play("MenuCan'tGoOn");
+            }
+        } else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow) ) {
+            if (downDestination != null && downDestinationFinal.GetComponent<MovingOnLevelsMap>().locked == true) {
+                AudioFW.Play("MenuCan'tGoOn");
+            }
+        } else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) {
+            if (rightDestination != null && rightDestinationFinal.GetComponent<MovingOnLevelsMap>().locked == true) {
+                AudioFW.Play("MenuCan'tGoOn");
+            }
+        } else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) {
+            if (leftDestination != null && leftDestinationFinal.GetComponent<MovingOnLevelsMap>().locked == true) {
+                AudioFW.Play("MenuCan'tGoOn");
             }
         }
 
@@ -80,6 +95,7 @@ public class MovingOnLevelsMap : MonoBehaviour
             SelectLevel(1);
             SelectLevel(2);
             SelectLevel(3);
+            SelectLevel(4);
 
 
             //if (currentLevel == true && levelNumber == 1) {
@@ -102,19 +118,26 @@ public class MovingOnLevelsMap : MonoBehaviour
         }
     }
 
-    private void SelectLevel(int i) {
-        if(currentLevel == true && levelNumber == i && locked == false) {
+    private void SelectLevel(int level) {
+        if(currentLevel == true && levelNumber == level && locked == false) {
             menuNav.CloseLevelMenu();
             menuNav.CloseMixedMenuStuff();
-            if(i == 1) {
-                levelSelector.LoadLevel1();
+            
+            for(int i = 0; i < levelSelector.levelsAvailable.Length; i ++) {
+                if(level == i + 1) {
+                    levelSelector.LoadLevels(i);
+                }
             }
-            if(i == 2) {
-                levelSelector.LoadLevel2();
-            }
-            if(i == 3) {
-                levelSelector.LoadLevel3();
-            }
+
+            //if(i == 1) {
+            //    levelSelector.LoadLevel1();
+            //}
+            //if(i == 2) {
+            //    levelSelector.LoadLevel2();
+            //}
+            //if(i == 3) {
+            //    levelSelector.LoadLevel3();
+            //}
         }
     }
 

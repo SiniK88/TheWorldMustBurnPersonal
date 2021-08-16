@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[ExecuteInEditMode]
 public class WaterBallDanger : MonoBehaviour
 {
 
@@ -10,7 +10,7 @@ public class WaterBallDanger : MonoBehaviour
 
     public float speed = 2f;
     public float height = 4f;
-    public Vector2 pos;
+    public Vector3 pos;
     public ParticleSystem splashParticles;
 
     // use physics and aaforce, with direction and gravity
@@ -28,7 +28,7 @@ public class WaterBallDanger : MonoBehaviour
 
         float newY = Mathf.Sin(Time.time * speed) * height + pos.y;
 
-        transform.position = new Vector2(pos.x, newY);
+        transform.position = new Vector3(pos.x, newY, pos.z);
         // ondraw gizmos selected piirt‰‰ korkeimman kohdan
     }
 

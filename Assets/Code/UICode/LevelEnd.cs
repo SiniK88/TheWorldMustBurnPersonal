@@ -17,7 +17,7 @@ public class LevelEnd : MonoBehaviour
     public Text EndLevelScoreTextHighScore;
 
     public MenuNavigation menuNav;
-    PlayLoops playLoops;
+    public PlayLoops playLoops;
     public Animator anim;
     public Image imag;
     bool levelend = false;
@@ -25,7 +25,7 @@ public class LevelEnd : MonoBehaviour
     void Start()
     {
 
-
+        playLoops = GetComponent<PlayLoops>();
         tileAmount = fm.GetComponent<FireManager>().GetTileAmountSprite();
 
         menuNav = FindObjectOfType<MenuNavigation>(); 
@@ -48,9 +48,11 @@ public class LevelEnd : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Escape)) {
+            playLoops.StopLevelMusic();
             menuNav.OpenPauseMenu();
             anim.Play("FadeOut");
             Destroy(transform.parent.gameObject, 3f);
+           
         }
     }
 

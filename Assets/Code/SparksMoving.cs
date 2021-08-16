@@ -56,6 +56,7 @@ public class SparksMoving : MonoBehaviour
     }
 
     void DestroySpark() {
+        
         var projectileEndParticleclone = Instantiate(projectileEndParticle, transform.position, transform.rotation);
         Destroy(projectileEndParticleclone.gameObject,1);
         Destroy(gameObject);
@@ -63,11 +64,12 @@ public class SparksMoving : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) {
     print("osui johonkin");
-
+        
         var speed = lastVelocity.magnitude;
         var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
 
         rb.velocity = direction * Mathf.Max(speed, 0f);
+        AudioFW.Play("Explosion1");
         DestroySpark();
     }
 

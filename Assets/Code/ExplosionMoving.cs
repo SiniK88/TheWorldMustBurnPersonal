@@ -24,7 +24,7 @@ public class ExplosionMoving : MonoBehaviour
     // pit‰isi saada kaikki ne tilet joihin explosion koskee ja sytytt‰‰ kaikki ne tulee. Ei vain yksi piste.
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Explosion")) {
-
+            
 
             Vector3 hitPosition = Vector3.zero;
             foreach (ContactPoint2D hit in collision.contacts) {

@@ -7,7 +7,7 @@ public class Rain : MonoBehaviour
     public ParticleSystem rain;
     public float rainCycle = 5;
     public float timer = 0;
-    public bool rainBool = false;
+    public bool rainBool = true;
 
     PlayerHealth playerHealth;
 
@@ -27,10 +27,12 @@ public class Rain : MonoBehaviour
         timer += Time.deltaTime;
         while(timer > rainCycle) {
             if (rainBool == true) {
+                AudioFW.StopLoop("Rain");
                 rain.Stop(true, ParticleSystemStopBehavior.StopEmitting);
                 rainBool = false;
             } else {
                 rain.Play();
+                AudioFW.PlayLoop("Rain");
                 rainBool = true;
             }
             timer -= rainCycle;

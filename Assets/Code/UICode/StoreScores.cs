@@ -18,18 +18,19 @@ public class StoreScores : MonoBehaviour
     public int tileamountlv1 = 1;
     public int tileamountlv2 = 1;
     public int tileamountlv3 = 1;
+    public int tileamountlv4 = 1;
 
     // should make highscores etc. as array/list. Just as levels are
 
 
-    public float[] bronceHighScores = new float[3];
-    public float[] silverHighScores = new float[3];
-    public float[] goldHighScores = new float[3];
+    public float[] bronceHighScores = new float[5];
+    public float[] silverHighScores = new float[5];
+    public float[] goldHighScores = new float[5];
 
-    public float[] bronceHighSeconds = new float[3];
-    public float[] silverHighSeconds = new float[3];
-    public float[] goldHighSeconds = new float[3];
-    public int[] tileAmounts = new int[3];
+    public float[] bronceHighSeconds = new float[5];
+    public float[] silverHighSeconds = new float[5];
+    public float[] goldHighSeconds = new float[5];
+    public int[] tileAmounts = new int[5];
 
     public GameObject[] levels;
     public GameObject[] locks;
@@ -60,16 +61,22 @@ public class StoreScores : MonoBehaviour
 
         // make these better later. Doesn't need to run on every frame, just occasionally. For example, run some function when level ends.
 
-
-        if (bronceHighScores[0] >= 0.5 || silverHighScores[0] >= 0.5 || goldHighScores[0] >= 0.5) {
-            levels[1].GetComponent<MovingOnLevelsMap>().locked = false;
-            locks[1].SetActive(false);
+        for (int j = 0; j < levels.Length; j++) {
+            if (bronceHighScores[j] >= 0.5 || silverHighScores[j] >= 0.5 || goldHighScores[j] >= 0.5) {
+                levels[j + 1].GetComponent<MovingOnLevelsMap>().locked = false;
+                locks[j + 1].SetActive(false);
+            }
         }
 
-        if (bronceHighScores[1] >= 0.5 || silverHighScores[1] >= 0.5 || goldHighScores[1] >= 0.5) {
-            levels[2].GetComponent<MovingOnLevelsMap>().locked = false;
-            locks[2].SetActive(false);
-        }
+        //if (bronceHighScores[0] >= 0.5 || silverHighScores[0] >= 0.5 || goldHighScores[0] >= 0.5) {
+        //    levels[1].GetComponent<MovingOnLevelsMap>().locked = false;
+        //    locks[1].SetActive(false);
+        //}
+
+        //if (bronceHighScores[1] >= 0.5 || silverHighScores[1] >= 0.5 || goldHighScores[1] >= 0.5) {
+        //    levels[2].GetComponent<MovingOnLevelsMap>().locked = false;
+        //    locks[2].SetActive(false);
+        //}
     }
 
     public void UpdateScores() {

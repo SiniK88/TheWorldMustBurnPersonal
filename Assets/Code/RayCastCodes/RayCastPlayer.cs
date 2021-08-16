@@ -39,8 +39,6 @@ public class RayCastPlayer : MonoBehaviour
 
     public ParticleSystem kipinä;
     public ParticleSystem dashKipinä;
-    Animator animator;
-    private string currentState;
     public GameObject dashBlock;
     PlayerHealth playerHealth;
     GameStart gameStart;
@@ -48,27 +46,14 @@ public class RayCastPlayer : MonoBehaviour
     float moveInput;
     float moveInputY;
     // animation states
-    const string PLAYER_BIRTH_RED = "PlayerBirthRed";
-    const string PLAYER_IDLE_RED = "PlayerIdleRed";
-    const string PLAYER_JUMP_RED = "PlayerJumpRed";
-    const string PLAYER_IDLE_BLUE = "PlayerIdleBlue";
-    const string PLAYER_JUMP_BLUE = "PlayerJumpBlue";
-    const string PLAYER_IDLE_PURPLE = "PlayerIdlePurple";
-    const string PLAYER_JUMP_PURPLE = "PlayerJumpPurple";
-    const string PLAYER_DEATH_PURPLE = "PlayerDeathPurple";
-    const string PLAYER_DEATH_RED = "PlayerDeathRed";
-    const string PLAYER_DEATH_BLUE = "PlayerDeathBlue";
+
 
     public GameObject playerBodyRed, playerBodyBlue, playerBodyPurple;
 
 
     private void Start() {
 
- 
-
-
         gm = FindObjectOfType<GameManager>();
-        animator = GetComponent<Animator>();
 
         controller = GetComponent<RayCast2DController>();
         gravity = -(2 * jumpHeight) / Mathf.Pow(timeToJumpApex, 2);
@@ -109,25 +94,6 @@ public class RayCastPlayer : MonoBehaviour
             playerBodyPurple.SetActive(true);
         }
 
-        /*if (velocity.y > 0) {
-            if (gm.State == PowerupType.None) {
-                ChangeAnimationState(PLAYER_JUMP_RED);
-            } else if (gm.State == PowerupType.Projectile) {
-                ChangeAnimationState(PLAYER_JUMP_BLUE);
-            } else if(gm.State == PowerupType.NoFire) {
-                ChangeAnimationState(PLAYER_JUMP_PURPLE);
-            }
-        }
-
-        if (velocity.y < 0) {
-            if (gm.State == PowerupType.None) {
-                ChangeAnimationState(PLAYER_IDLE_RED);
-            } else if (gm.State == PowerupType.Projectile) {
-                ChangeAnimationState(PLAYER_IDLE_BLUE);
-            } else if (gm.State == PowerupType.NoFire) {
-                ChangeAnimationState(PLAYER_IDLE_PURPLE);
-            }
-        }*/
 
         if (controller.collisions.above || controller.collisions.below) {
             velocity.y = 0;
@@ -145,7 +111,7 @@ public class RayCastPlayer : MonoBehaviour
         }
 
         if (Input.GetButtonDown("Jump") && jumps < maxJumps) {
-            
+            AudioFW.Play("SwushLong");
             jumps++;
             velocity = Vector2.zero;
             velocity.y = jumpVelocity;
@@ -173,40 +139,14 @@ public class RayCastPlayer : MonoBehaviour
         dashKipinä.Play();
     }
 
-    void JumpAnimation() {
-        if (Input.GetAxis("Vertical") > 0) {
-            animator.Play("PlayerJumpRed");
-        } else if (Input.GetAxis("Vertical") < 0) {
-            animator.Play("PlayerIdleRed");
-        }
-    }
-    public void StartAnim() {
-        ChangeAnimationState(PLAYER_BIRTH_RED);
-    }
-
-    void ChangeAnimationState (string newState) {
-        if (currentState == newState) return;
-
-        animator.Play(newState);
-        currentState = newState;
-    }
 
 
-    /*public void DeathAnim() {
-        if (gm.State == PowerupType.None) {
-            ChangeAnimationState(PLAYER_DEATH_RED);
-        } else if (gm.State == PowerupType.Projectile) {
-            ChangeAnimationState(PLAYER_DEATH_BLUE);
-        } else if (gm.State == PowerupType.NoFire) {
-            ChangeAnimationState(PLAYER_DEATH_PURPLE);
-        }
-    }*/
 
     void Dash() {
         if (direction == 0) {
 
             if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButton("Dash")) && canDash == true) {
-               
+                AudioFW.Play("SwushShort");
                 if (moveInput < 0) {
                     CreateDashKipinä();
                     direction = 1;
