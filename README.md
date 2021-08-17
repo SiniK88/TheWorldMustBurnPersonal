@@ -1,2 +1,2 @@
 # TheWorldMustBurnPersonal
-Personal project made of school project
+School project evolved to a personal project
