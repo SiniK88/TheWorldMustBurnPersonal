@@ -32,10 +32,11 @@ public class MovingOnLevelsMap : MonoBehaviour
 
     public LevelSelector levelSelector;
     public MenuNavigation menuNav;
+    StoreScores storeScores;
     
     void Start()
     {
-        
+        storeScores = GetComponent<StoreScores>();
     }
 
     // Update is called once per frame
@@ -92,11 +93,7 @@ public class MovingOnLevelsMap : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)) {
 
-            SelectLevel(1);
-            SelectLevel(2);
-            SelectLevel(3);
-            SelectLevel(4);
-
+            SelectLevel(levelNumber);
 
             //if (currentLevel == true && levelNumber == 1) {
             //    levelSelector.LoadLevel1();

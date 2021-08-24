@@ -37590,7 +37590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a25b293efeeca744380cfc09f62423b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelAmount: 4
+  levelAmount: 5
   bronceText: {fileID: 1223370159}
   silverText: {fileID: 1166449902}
   goldText: {fileID: 1299694048}
@@ -37599,6 +37599,7 @@ MonoBehaviour:
   tileamountlv2: 1
   tileamountlv3: 1
   tileamountlv4: 1
+  tileamountlv5: 1
   bronceHighScores:
   - 0
   - 0

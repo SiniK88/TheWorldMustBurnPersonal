@@ -25,6 +25,9 @@ public class PlayLoops : MonoBehaviour
         if (levelNum == 4) {
             AudioFW.PlayLoop("Level2Cave");
         }
+        if (levelNum == 5) {
+            AudioFW.PlayLoop("Level5");
+        }
     }
 
     public void StopLevelMusic() {
@@ -39,6 +42,9 @@ public class PlayLoops : MonoBehaviour
         }
         if (levelNum == 4) {
             AudioFW.StopLoop("Level2Cave");
+        }
+        if (levelNum == 5) {
+            AudioFW.StopLoop("Level5");
         }
     }
 

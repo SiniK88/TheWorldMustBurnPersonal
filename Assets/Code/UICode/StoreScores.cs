@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class StoreScores : MonoBehaviour
 {
-    public int levelAmount = 3;
+    public int levelAmount = 5;
 
 
 
@@ -19,6 +19,7 @@ public class StoreScores : MonoBehaviour
     public int tileamountlv2 = 1;
     public int tileamountlv3 = 1;
     public int tileamountlv4 = 1;
+    public int tileamountlv5 = 1;
 
     // should make highscores etc. as array/list. Just as levels are
 

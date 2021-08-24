@@ -37,6 +37,7 @@ public class Sparks : MonoBehaviour
 
         //ProjectileKeys();
         ProjectileMouse();
+        ProjectileKeys();
     }
 
     private void ProjectileMouse() {
@@ -88,31 +89,31 @@ public class Sparks : MonoBehaviour
             }
 
             // this should be done again/ fixed
-            if ((Input.GetKeyDown(KeyCode.X) || Input.GetButton("Fire")) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))) {
+            if ((Input.GetKeyDown(KeyCode.E) || Input.GetButton("Fire")) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))) {
                 Instantiate(projectile, shotPoint.position, Quaternion.Euler(0f, 0f, 23f));
                 timeBtwShots = startTimeBtwShots;
-            } else if ((Input.GetKeyDown(KeyCode.X) || Input.GetButton("Fire")) && (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))) {
+            } else if ((Input.GetKeyDown(KeyCode.E) || Input.GetButton("Fire")) && (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))) {
                 Instantiate(projectile, shotPoint.position, Quaternion.Euler(0f, 0f, 23f));
                 timeBtwShots = startTimeBtwShots;
 
-            } else if ((Input.GetKeyDown(KeyCode.X) || Input.GetButton("Fire")) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))) {
+            } else if ((Input.GetKeyDown(KeyCode.E) || Input.GetButton("Fire")) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))) {
                 Instantiate(projectile, shotPoint.position, Quaternion.Euler(0f, 0f, -23f));
                 timeBtwShots = startTimeBtwShots;
 
-            } else if ((Input.GetKeyDown(KeyCode.X) || Input.GetButton("Fire")) && (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))) {
+            } else if ((Input.GetKeyDown(KeyCode.E) || Input.GetButton("Fire")) && (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))) {
                 Instantiate(projectile, shotPoint.position, Quaternion.Euler(0f, 0f, -23f));
                 timeBtwShots = startTimeBtwShots;
 
-            } else if ((Input.GetKeyDown(KeyCode.X) || Input.GetButton("Fire")) && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))) {
+            } else if ((Input.GetKeyDown(KeyCode.E) || Input.GetButton("Fire")) && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))) {
                 Instantiate(projectile, shotPoint.position, Quaternion.Euler(0f, 0f, 45f));
                 timeBtwShots = startTimeBtwShots;
-            } else if ((Input.GetKeyDown(KeyCode.X) || Input.GetButton("Fire")) && (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))) {
+            } else if ((Input.GetKeyDown(KeyCode.E) || Input.GetButton("Fire")) && (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))) {
                 Instantiate(projectile, shotPoint.position, Quaternion.Euler(0f, 0f, -45f));
                 timeBtwShots = startTimeBtwShots;
-            } else if ((Input.GetKeyDown(KeyCode.X) || Input.GetButton("Fire")) && (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))) {
+            } else if ((Input.GetKeyDown(KeyCode.E) || Input.GetButton("Fire")) && (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))) {
                 Instantiate(projectile, shotPoint.position, Quaternion.Euler(0f, 0f, -90f));
                 timeBtwShots = startTimeBtwShots;
-            } else if ((Input.GetKeyDown(KeyCode.X) || Input.GetButton("Fire")) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))) {
+            } else if ((Input.GetKeyDown(KeyCode.E) || Input.GetButton("Fire")) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))) {
                 Instantiate(projectile, shotPoint.position, Quaternion.Euler(0f, 0f, 0f));
                 timeBtwShots = startTimeBtwShots;
             }
