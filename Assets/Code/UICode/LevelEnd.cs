@@ -68,7 +68,7 @@ public class LevelEnd : MonoBehaviour
             EndLevelScoreTextHighScore = GameObject.Find("HighScoreEndText").GetComponent<Text>();
             LevelEndTextCommon();
             scoreCounter.RegisterNewScore(LevelNumber);
-            scoreCounter.RegisterScore();
+            //scoreCounter.RegisterScore();
             anim.Play("FadeOut");
             //scoreCounter.scoreValue = 0;
             //Destroy(gameObject,3f);

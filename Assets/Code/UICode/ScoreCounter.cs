@@ -76,28 +76,28 @@ public class ScoreCounter : MonoBehaviour
         }
     }
 
-    public void RegisterNewScore(int levelNum) {
-        for(int i = 0; i < storeScores.levels.Length; i++) {
+    public void RegisterNewScore(int i) {
+        //for(int i = 0; i < storeScores.levels.Length; i++) {
             perScore = scoreValue / burnableTilesCount;
             if (perScore >= 0.50 && perScore < 0.75) {
-                if (perScore > storeScores.bronceHighScores[i]) {
-                    storeScores.bronceHighScores[i] = perScore;
-                    storeScores.bronceHighSeconds[i] = gameTimer.gameTime - gameTimer.timer;
+                if (perScore > storeScores.bronceHighScores[i-1]) {
+                    storeScores.bronceHighScores[i-1] = perScore;
+                    storeScores.bronceHighSeconds[i-1] = gameTimer.gameTime - gameTimer.timer;
                 }
             }
             if (perScore >= 0.75 && perScore < 1) {
-                if (perScore > storeScores.silverHighScores[i]) {
-                    storeScores.silverHighScores[i] = perScore;
-                    storeScores.silverHighSeconds[i] = gameTimer.gameTime - gameTimer.timer;
+                if (perScore > storeScores.silverHighScores[i-1]) {
+                    storeScores.silverHighScores[i-1] = perScore;
+                    storeScores.silverHighSeconds[i-1] = gameTimer.gameTime - gameTimer.timer;
                 }
             }
             if (perScore >= 1) {
-                if (perScore > storeScores.goldHighScores[i]) {
-                    storeScores.goldHighScores[i] = perScore;
-                    storeScores.goldHighSeconds[i] = gameTimer.gameTime - gameTimer.timer;
+                if (perScore > storeScores.goldHighScores[i-1]) {
+                    storeScores.goldHighScores[i-1] = perScore;
+                    storeScores.goldHighSeconds[i-1] = gameTimer.gameTime - gameTimer.timer;
                 }
             }
-        }
+        //}
 
 
     }
