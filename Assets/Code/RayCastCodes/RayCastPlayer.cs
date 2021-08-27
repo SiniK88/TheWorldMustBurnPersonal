@@ -40,8 +40,7 @@ public class RayCastPlayer : MonoBehaviour
     public ParticleSystem kipinä;
     public ParticleSystem dashKipinä;
     public GameObject dashBlock;
-    PlayerHealth playerHealth;
-    GameStart gameStart;
+
 
     float moveInput;
     float moveInputY;
@@ -61,8 +60,7 @@ public class RayCastPlayer : MonoBehaviour
         print(" gravity " + gravity + " jump velocity " + jumpVelocity);
 
         dashTime = startDashTime;
-        playerHealth = FindObjectOfType<PlayerHealth>();
-        gameStart = FindObjectOfType<GameStart>();
+
     }
 
     private void Update() {
@@ -80,19 +78,6 @@ public class RayCastPlayer : MonoBehaviour
         }
         transform.localScale = characterScale;
 
-        if (gm.State == PowerupType.None) {
-            playerBodyRed.SetActive(true);
-            playerBodyBlue.SetActive(false);
-            playerBodyPurple.SetActive(false);
-        } else if (gm.State == PowerupType.Projectile) {
-            playerBodyRed.SetActive(false);
-            playerBodyBlue.SetActive(true);
-            playerBodyPurple.SetActive(false);
-        } else if (gm.State == PowerupType.NoFire) {
-            playerBodyRed.SetActive(false);
-            playerBodyBlue.SetActive(false);
-            playerBodyPurple.SetActive(true);
-        }
 
 
         if (controller.collisions.above || controller.collisions.below) {

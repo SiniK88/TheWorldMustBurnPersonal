@@ -11,7 +11,7 @@ public class PowerUpProjektile : MonoBehaviour
 
     void Start()
     {
-
+        //weapon = GameObject.FindGameObjectWithTag("Weapon");
     }
 
     void OnTriggerEnter2D(Collider2D collision) {

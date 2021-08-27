@@ -39,7 +39,7 @@ public class StoreScores : MonoBehaviour
     public GameObject player;
 
     private void Start() {
-        levels = GameObject.FindGameObjectsWithTag("Level");
+        //levels = GameObject.FindGameObjectsWithTag("Level");
         locks = GameObject.FindGameObjectsWithTag("Locks");
     }
 

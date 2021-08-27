@@ -46,22 +46,27 @@ public class MenuNavigation : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.U)) {
             UnlockAllLevels();
         }
-            /*if (EventSystem.current.currentSelectedGameObject != null) {
-            if(EventSystem.current.currentSelectedGameObject.name == "Level1Button") {
-                lv1Score.SetActive(true);
-                lv2Score.SetActive(false);
-                lv3Score.SetActive(false);
-            } else if (EventSystem.current.currentSelectedGameObject.name == "Level2Button") {
-                lv1Score.SetActive(false);
-                lv2Score.SetActive(true);
-                lv3Score.SetActive(false);
-            } else if (EventSystem.current.currentSelectedGameObject.name == "Level3Button") {
-                lv1Score.SetActive(false);
-                lv2Score.SetActive(false);
-                lv3Score.SetActive(true);
-            }
-            //Debug.Log(EventSystem.current.currentSelectedGameObject.name);
-        }*/
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+
+            OpenPauseMenu();
+        }
+        /*if (EventSystem.current.currentSelectedGameObject != null) {
+        if(EventSystem.current.currentSelectedGameObject.name == "Level1Button") {
+            lv1Score.SetActive(true);
+            lv2Score.SetActive(false);
+            lv3Score.SetActive(false);
+        } else if (EventSystem.current.currentSelectedGameObject.name == "Level2Button") {
+            lv1Score.SetActive(false);
+            lv2Score.SetActive(true);
+            lv3Score.SetActive(false);
+        } else if (EventSystem.current.currentSelectedGameObject.name == "Level3Button") {
+            lv1Score.SetActive(false);
+            lv2Score.SetActive(false);
+            lv3Score.SetActive(true);
+        }
+        //Debug.Log(EventSystem.current.currentSelectedGameObject.name);
+    }*/
     }
 
 
