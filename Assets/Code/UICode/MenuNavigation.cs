@@ -21,7 +21,6 @@ public class MenuNavigation : MonoBehaviour
     public GameObject[] locks;
     public MenuAudio menuAudio;
 
-    public GameObject currentLevel;
     private void Start() {
         levels = GameObject.FindGameObjectsWithTag("Level");
         locks = GameObject.FindGameObjectsWithTag("Locks");
@@ -105,7 +104,7 @@ public class MenuNavigation : MonoBehaviour
     public void OpenPauseMenu() {
         pauseMenu.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(levelEndFirstButton);
+        EventSystem.current.SetSelectedGameObject(PauseFirstButton);
     }
 
     public void ClosePauseMenu() {

@@ -25,7 +25,9 @@ public class LevelEnd : MonoBehaviour
     void Start()
     {
 
-        playLoops = GetComponent<PlayLoops>();
+        playLoops = FindObjectOfType<PlayLoops>();
+        playLoops.StartLevelMusic(LevelNumber);
+
         tileAmount = fm.GetComponent<FireManager>().GetTileAmountSprite();
 
         menuNav = FindObjectOfType<MenuNavigation>(); 
@@ -48,13 +50,15 @@ public class LevelEnd : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            playLoops.StopLevelMusic();
+            //playLoops.StopLevelMusic();
+            //anim.Play("FadeOut");
             menuNav.OpenPauseMenu();
-            anim.Play("FadeOut");
-            Destroy(transform.parent.gameObject, 3f);
+            
+            //Destroy(transform.parent.gameObject, 3f);
            
         }
     }
+
 
 
     private void OnTriggerEnter2D(Collider2D collision) {
