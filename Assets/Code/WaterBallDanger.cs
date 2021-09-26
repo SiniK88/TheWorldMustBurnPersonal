@@ -5,7 +5,6 @@ using UnityEngine;
 public class WaterBallDanger : MonoBehaviour
 {
 
-    Rigidbody2D rb;
     //public float forceup = 10f;
 
     public float speed = 2f;
@@ -17,7 +16,7 @@ public class WaterBallDanger : MonoBehaviour
     // or
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+
         pos = transform.position;
     }
 

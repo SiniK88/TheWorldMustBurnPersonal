@@ -41,6 +41,9 @@ public class FireManager : MonoBehaviour
     public BoundsInt bounds;
     public Vector2 pos;
     public Vector2 playerPosition2;
+
+    public bool InstantiateLights = false;
+    [SerializeField] GameObject fireLight;
     void Start() {
         //player = GameObject.FindGameObjectWithTag("Player");
         Vector3 playerPosition = player.transform.position;
@@ -104,6 +107,9 @@ public class FireManager : MonoBehaviour
         newFire.StartBurning(tilePosition, data, this);
         activeFires.Add(tilePosition);
 
+        if(InstantiateLights == true) {
+            InstantiateFireLights(tilePosition);
+        }
         /*if (map.HasTile(tempTilepos) && dataunder.groudTile == true) {
             newFire = Instantiate(firePrefab);
             newFire.transform.SetParent(allFires.transform);
@@ -132,7 +138,9 @@ public class FireManager : MonoBehaviour
         newFire3.StartBurning(tilePosition, data, this);
         activeFires.Add(tilePosition);
 
-
+        if (InstantiateLights == true) {
+            InstantiateFireLights(tilePosition);
+        }
         /*if (mapMoving.HasTile(tempTilepos) && dataunder.groudTile == true) {
             newFire3 = Instantiate(firePrefab2);
             newFire3.transform.SetParent(allFires.transform);
@@ -306,6 +314,22 @@ public class FireManager : MonoBehaviour
 
         Debug.Log(amount);
         return amount;
+    }
+
+    public void InstantiateFireLights(Vector3Int tilePosition) {
+        if (activeFires.Count <= 1) { 
+        var lightTemp = Instantiate(fireLight);
+        lightTemp.transform.SetParent(allFires.transform);
+        lightTemp.transform.position = map.GetCellCenterWorld(tilePosition);
+    } else {
+            var randomNum = Random.Range(0, 2);
+            if(randomNum == 1) {
+                var lightTemp = Instantiate(fireLight);
+                lightTemp.transform.SetParent(allFires.transform);
+                lightTemp.transform.position = map.GetCellCenterWorld(tilePosition);
+            }
+        }
+
     }
 
 }
