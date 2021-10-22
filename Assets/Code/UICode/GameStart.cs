@@ -5,15 +5,19 @@ using UnityEngine;
 public class GameStart : MonoBehaviour
 {
 
-    float Timer = 1f; // 
+    [SerializeField] float Timer = 1f; // 
     public bool birth = false;
     public GameObject player;
     GameManager gm;
+
+    public GameObject playerParticles;
+    public GameObject lightP;
+    public ParticleSystem spark;
     //RayCastPlayer playerC;
     private void Start() {
         gm = FindObjectOfType<GameManager>();
         gm.State = PowerupType.None;
-        //playerC = FindObjectOfType<RayCastPlayer>();
+
     }
 
     void Update()
@@ -25,6 +29,9 @@ public class GameStart : MonoBehaviour
                 //player.SetActive(true);
                 Timer = 0;
                 player.GetComponent<RayCastPlayer>().enabled = true;
+                playerParticles.SetActive(true);
+                lightP.SetActive(true);
+                spark.Play();
                 //player.GetComponent<SpriteRenderer>().enabled = true;
             }
         }

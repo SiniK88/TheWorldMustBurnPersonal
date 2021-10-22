@@ -21,6 +21,7 @@ TagManager:
   - Level
   - Locks
   - CurrentLevel
+  - Particles
   layers:
   - Default
   - TransparentFX

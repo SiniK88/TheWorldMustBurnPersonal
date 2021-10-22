@@ -15,13 +15,17 @@ public class LevelEnd : MonoBehaviour
     public ScoreCounter scoreCounter;
     public Text EndLevelScoreTextCommon;
     public Text EndLevelScoreTextHighScore;
+    GameManager gm;
 
     public MenuNavigation menuNav;
     public PlayLoops playLoops;
     public Animator anim;
     public Image imag;
     bool levelend = false;
-    float timer = 1f;
+    float timer = 2f;
+
+    public GameObject[] playerParticles;
+
     void Start()
     {
 
@@ -31,11 +35,14 @@ public class LevelEnd : MonoBehaviour
         tileAmount = fm.GetComponent<FireManager>().GetTileAmountSprite();
 
         menuNav = FindObjectOfType<MenuNavigation>(); 
+        gm = FindObjectOfType<GameManager>();
         scoreCounter = FindObjectOfType<ScoreCounter>();
         gameTimer = FindObjectOfType<GameTimer>();
         storeScores = FindObjectOfType<StoreScores>();
-       // playLoops = FindObjectOfType<PlayLoops>();
+        // playLoops = FindObjectOfType<PlayLoops>();
 
+        if (playerParticles == null)
+            playerParticles = GameObject.FindGameObjectsWithTag("Particles");
     }
 
     private void Update() {
@@ -64,7 +71,7 @@ public class LevelEnd : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Player")) {
             levelend = true;
-
+            LevelEndParticles();
             playLoops.StopLevelMusic();
 
             menuNav.OpenLevelEndMenu();
@@ -110,5 +117,22 @@ public class LevelEnd : MonoBehaviour
             }
         }
     }
+
+    public void LevelEndParticles() {
+
+         
+                playerParticles = GameObject.FindGameObjectsWithTag("Particles");
+
+        foreach (GameObject part in playerParticles) {
+            var particle = part.GetComponent<ParticleSystem>();
+            particle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        }
+
+        //for (int i = 0; i < playerParticles.Length; i++) {
+        //    playerParticles[i]
+        //}
+
+        }
+
 
 }

@@ -124,6 +124,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Playernovel3
       objectReference: {fileID: 0}
+    - target: {fileID: 7072701337762024682, guid: e85a5b60835a58c43b291029da7d6eab, type: 3}
+      propertyPath: m_TagString
+      value: Particles
+      objectReference: {fileID: 0}
     - target: {fileID: 7072701337762024695, guid: e85a5b60835a58c43b291029da7d6eab, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.b
       value: 0.62352943
@@ -214,6 +218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Playernovel2
       objectReference: {fileID: 0}
+    - target: {fileID: 859226143815616914, guid: c4a1b4fc49b98f34e8328ddccb54c569, type: 3}
+      propertyPath: m_TagString
+      value: Particles
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4a1b4fc49b98f34e8328ddccb54c569, type: 3}
 --- !u!4 &4392961028568039521 stripped
@@ -251,6 +259,10 @@ PrefabInstance:
     - target: {fileID: 5495080423320551344, guid: da0551fbdb7f6554d9a02b09662a1668, type: 3}
       propertyPath: m_Name
       value: PlayerbaseParticle2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495080423320551344, guid: da0551fbdb7f6554d9a02b09662a1668, type: 3}
+      propertyPath: m_TagString
+      value: Particles
       objectReference: {fileID: 0}
     - target: {fileID: 5495080423320551347, guid: da0551fbdb7f6554d9a02b09662a1668, type: 3}
       propertyPath: m_RootOrder
@@ -358,6 +370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerEyes
       objectReference: {fileID: 0}
+    - target: {fileID: 179371554100895323, guid: 38529c37a15a898499b5823e48caff81, type: 3}
+      propertyPath: m_TagString
+      value: Particles
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38529c37a15a898499b5823e48caff81, type: 3}
 --- !u!4 &4448030644131056653 stripped
@@ -432,6 +448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerAsParticles
       objectReference: {fileID: 0}
+    - target: {fileID: 5044021916860438807, guid: 5a427f6277c61c4438676079a9820043, type: 3}
+      propertyPath: m_TagString
+      value: Particles
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a427f6277c61c4438676079a9820043, type: 3}
 --- !u!4 &8806826464250081404 stripped
@@ -461,6 +481,10 @@ PrefabInstance:
     - target: {fileID: 4133852403124141720, guid: 4887cea0242772b4f9a6578fcd091943, type: 3}
       propertyPath: m_Name
       value: Playernovel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133852403124141720, guid: 4887cea0242772b4f9a6578fcd091943, type: 3}
+      propertyPath: m_TagString
+      value: Particles
       objectReference: {fileID: 0}
     - target: {fileID: 4133852403124141723, guid: 4887cea0242772b4f9a6578fcd091943, type: 3}
       propertyPath: m_RootOrder
@@ -580,6 +604,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerbaseParticle
       objectReference: {fileID: 0}
+    - target: {fileID: 3994421945429802706, guid: a3d6c0381e5b53e4e8d03487ebc5a2dc, type: 3}
+      propertyPath: m_TagString
+      value: Particles
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3d6c0381e5b53e4e8d03487ebc5a2dc, type: 3}
 --- !u!4 &623991194653124220 stripped
@@ -641,6 +669,10 @@ PrefabInstance:
     - target: {fileID: 179371554100895323, guid: 38529c37a15a898499b5823e48caff81, type: 3}
       propertyPath: m_Name
       value: PlayerEyes (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 179371554100895323, guid: 38529c37a15a898499b5823e48caff81, type: 3}
+      propertyPath: m_TagString
+      value: Particles
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38529c37a15a898499b5823e48caff81, type: 3}
