@@ -72,6 +72,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -81,8 +82,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -496,6 +497,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      KuusiVih_12: -4421867779019399068
+      KuusiVih_9: -134859265549935306
+      KuusiVih_1: 5307314000655442724
+      KuusiVih_5: -85160647019606531
+      KuusiVih_11: -3859684461597126287
+      KuusiVih_13: 5073929252973823452
+      KuusiVih_0: 5122934790269449527
+      KuusiVih_6: 5647983786251182063
+      KuusiVih_7: 2097850017607573387
+      KuusiVih_3: 7215157613190389760
+      KuusiVih_10: -1389275282751232550
+      KuusiVih_2: -896705284174544010
+      KuusiVih_8: 4737137771107696432
+      KuusiVih_16: 3535915975439879839
+      KuusiVih_4: -5624248093674686977
+      KuusiVih_14: 869320190020791015
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

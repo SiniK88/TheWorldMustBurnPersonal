@@ -51,6 +51,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -60,8 +61,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -328,6 +329,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      RockEarth_6: 4583320234133013831
+      RockEarth_8: 305108665707696552
+      RockEarth_3: -2102903819651536707
+      RockEarth_7: -5296277294924332857
+      RockEarth_2: 8171793275753668384
+      RockEarth_5: 5798782670028494600
+      RockEarth_0: 369177844117045577
+      RockEarth_1: -4266864918251593393
+      RockEarth_4: -551332991355814220
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -51,6 +51,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -60,8 +61,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -328,6 +329,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      burnedGround_2: 6605622165202515219
+      burnedGround_7: -5240193599895694075
+      burnedGround_5: 1215716596065539318
+      burnedGround_4: 8512369215462912685
+      burnedGround_3: 1905378830706826179
+      burnedGround_6: -2367838258479390926
+      burnedGround_8: 5562208907930902268
+      burnedGround_1: -3208882549712605991
+      burnedGround_0: 7007128778732662575
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

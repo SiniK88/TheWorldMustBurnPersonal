@@ -147,6 +147,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -156,8 +157,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -1096,6 +1097,48 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      pienet2_33: 8659428423149630851
+      pienet2_6: -2919068074264824431
+      pienet2_30: -5625539694411593348
+      pienet2_3: -1313669165249889398
+      pienet2_11: 1262314177963530225
+      pienet2_18: 5661614353773833516
+      pienet2_27: 1908294429807504310
+      pienet2_16: -8549409707811535850
+      pienet2_34: 6497116590229879009
+      pienet2_29: -6389209525184643873
+      pienet2_38: 3779294740129465179
+      pienet2_19: 7624462897610809658
+      pienet2_7: -4647085043726446380
+      pienet2_9: 4393196093553480748
+      pienet2_28: -3025696295812176095
+      pienet2_4: -7016337101163646310
+      pienet2_1: 851321494044339958
+      pienet2_25: 6620137275529205015
+      pienet2_32: -292437033389488693
+      pienet2_24: -2359971087907356351
+      pienet2_13: 5264866550317793150
+      pienet2_23: 6254842159930681933
+      pienet2_10: -422045689171760095
+      pienet2_0: 8015475666252094134
+      pienet2_12: 7386141101457292177
+      pienet2_37: -5355255253796530884
+      pienet2_21: -5020063138537769045
+      pienet2_22: -6835787503740949745
+      pienet2_35: 7301351253101651223
+      pienet2_36: -5946948908986386933
+      pienet2_2: 7093843688163834011
+      pienet2_14: 3046835075712163971
+      pienet2_39: -7955984207319035398
+      pienet2_15: 1269575871639494412
+      pienet2_20: 7494895894016461030
+      pienet2_40: 5219475034593187380
+      pienet2_26: 13437705260854395
+      pienet2_8: 7398566002933474287
+      pienet2_17: -243136451428559754
+      pienet2_5: -8927436952855035197
+      pienet2_31: 6192821225424962506
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

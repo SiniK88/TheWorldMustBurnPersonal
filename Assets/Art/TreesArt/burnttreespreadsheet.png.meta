@@ -81,6 +81,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -90,8 +91,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -568,6 +569,26 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      burnttreespreadsheet_2: -1364803266705238408
+      burnttreespreadsheet_10: 5725001727940789443
+      burnttreespreadsheet_8: 6547282257090007692
+      burnttreespreadsheet_5: -4296130837933990029
+      burnttreespreadsheet_9: -3845625545687365216
+      burnttreespreadsheet_3: 6046445005872175385
+      burnttreespreadsheet_14: -815825219662679069
+      burnttreespreadsheet_16: -5673470183425358995
+      burnttreespreadsheet_15: 7084426810336004743
+      burnttreespreadsheet_6: -7568957517982319218
+      burnttreespreadsheet_13: 3423487611467475181
+      burnttreespreadsheet_4: 5335567556004184522
+      burnttreespreadsheet_18: 8736713269576154069
+      burnttreespreadsheet_17: -6501360851304000191
+      burnttreespreadsheet_1: -175998653148473766
+      burnttreespreadsheet_11: 7287290408559418256
+      burnttreespreadsheet_7: 4595879563177308731
+      burnttreespreadsheet_12: 2439230886209717251
+      burnttreespreadsheet_0: 2791353061316576030
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

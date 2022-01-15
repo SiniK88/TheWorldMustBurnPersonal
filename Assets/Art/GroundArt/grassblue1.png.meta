@@ -87,6 +87,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -96,8 +97,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -616,6 +617,28 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      grassblue1_6: -965432612835233553
+      grassblue1_21: 9102554634759566768
+      grassblue1_7: 288773906235331936
+      grassblue1_17: -2312738968525739011
+      grassblue1_1: -8092467348988900224
+      grassblue1_5: 801914420261137889
+      grassblue1_8: -2643682636228289237
+      grassblue1_4: -484510877505062689
+      grassblue1_14: -888350131504722373
+      grassblue1_16: 1754563240257747652
+      grassblue1_18: 3932902197310719679
+      grassblue1_2: -4702819267390515403
+      grassblue1_0: -1476756845249903828
+      grassblue1_15: 7189647086164853406
+      grassblue1_10: 5157983275168797786
+      grassblue1_3: -8741665530068842454
+      grassblue1_13: 7539686601052694200
+      grassblue1_9: -4242340349634311893
+      grassblue1_22: 3017063378343618093
+      grassblue1_20: 2153096473616478022
+      grassblue1_11: -7477438863501666062
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

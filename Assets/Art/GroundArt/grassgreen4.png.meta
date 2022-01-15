@@ -87,6 +87,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -96,8 +97,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -616,6 +617,28 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      grassgreen4_9: 7999138494929737021
+      grassgreen4_20: -5799597452244335584
+      grassgreen4_11: -1734888290610020995
+      grassgreen4_8: 8704024975317986272
+      grassgreen4_10: 5545459146957764108
+      grassgreen4_1: -5448519994473933282
+      grassgreen4_6: -6190735569323094672
+      grassgreen4_13: 1869832914780521830
+      grassgreen4_15: -6813783219271556616
+      grassgreen4_0: -5462914005038041553
+      grassgreen4_2: 891343136892254413
+      grassgreen4_5: -1604099382497751904
+      grassgreen4_4: -1221246304428182452
+      grassgreen4_18: -9199576138158193513
+      grassgreen4_7: 3502262208463129996
+      grassgreen4_21: -7356581064220789110
+      grassgreen4_22: 1993965556982453618
+      grassgreen4_16: 82860585418683648
+      grassgreen4_3: 4614527010369822874
+      grassgreen4_14: 6690958501837920184
+      grassgreen4_17: -4146101285975221721
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

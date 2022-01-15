@@ -105,6 +105,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -114,8 +115,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -760,6 +761,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      puupurple_4: 5471096391573200498
+      puupurple_23: -1703273908259716146
+      puupurple_11: -1159848977222446921
+      puupurple_16: -1016374470630967338
+      puupurple_7: -5474590238591616305
+      puupurple_3: -6576808929532819030
+      puupurple_5: 2174654721131835768
+      puupurple_19: -6452105878287180498
+      puupurple_14: 2862217140586603144
+      puupurple_18: 1640176157597618906
+      puupurple_0: 6749173910451160034
+      puupurple_8: -3577305351706837112
+      puupurple_13: 1801239818162186634
+      puupurple_22: 6058507978209499025
+      puupurple_21: 6979127184195508329
+      puupurple_26: 2634728047772414539
+      puupurple_12: -8422653946282884921
+      puupurple_15: 8074736521611207824
+      puupurple_17: -6924716002099143917
+      puupurple_1: 9222269061986948382
+      puupurple_20: -184567920242250593
+      puupurple_10: 6594367452850050888
+      puupurple_6: 7821725236623883786
+      puupurple_24: 5468634994994676853
+      puupurple_9: 1384626262903806860
+      puupurple_25: -3940563943763903233
+      puupurple_2: 4611703259160415312
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

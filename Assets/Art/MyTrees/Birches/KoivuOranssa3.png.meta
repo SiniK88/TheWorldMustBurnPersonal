@@ -102,6 +102,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -111,8 +112,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -694,6 +695,31 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      KoivuOranssa3_2: -1407205527591835431
+      KoivuOranssa3_10: -5642900696149067497
+      KoivuOranssa3_3: 2868574990089231877
+      KoivuOranssa3_8: -7079720628295953354
+      KoivuOranssa3_20: 7588158368243540451
+      KoivuOranssa3_24: 759430236994119609
+      KoivuOranssa3_6: -2525409158826418535
+      KoivuOranssa3_19: 8123365157853007572
+      KoivuOranssa3_25: 1486860914519190009
+      KoivuOranssa3_17: -255478302819924657
+      KoivuOranssa3_16: -2587689568911641875
+      KoivuOranssa3_7: 108057736236174190
+      KoivuOranssa3_12: -8004738803809672600
+      KoivuOranssa3_11: 3090608201069636297
+      KoivuOranssa3_15: -8039043124309088112
+      KoivuOranssa3_22: -5805768707999815544
+      KoivuOranssa3_21: 8391430042904328655
+      KoivuOranssa3_23: 2759042406113986420
+      KoivuOranssa3_5: -4395000114044895325
+      KoivuOranssa3_13: 2299635654170149631
+      KoivuOranssa3_9: 6295386915541232569
+      KoivuOranssa3_1: -6061686648111053035
+      KoivuOranssa3_14: -6066289863609272765
+      KoivuOranssa3_18: -3955295039494717922
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

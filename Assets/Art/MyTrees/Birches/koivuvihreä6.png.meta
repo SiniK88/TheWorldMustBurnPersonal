@@ -96,6 +96,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -105,8 +106,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -688,6 +689,31 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      "koivuvihre\xE46_19": -8657460279357195345
+      "koivuvihre\xE46_11": 5567728121901962032
+      "koivuvihre\xE46_17": 5634376671652347869
+      "koivuvihre\xE46_13": 4032678968361568951
+      "koivuvihre\xE46_22": 1613002491906848393
+      "koivuvihre\xE46_3": -3972192756361741682
+      "koivuvihre\xE46_10": -5491921479386769215
+      "koivuvihre\xE46_18": 260327484515705842
+      "koivuvihre\xE46_16": -8216241109559114100
+      "koivuvihre\xE46_6": 8849140356911991629
+      "koivuvihre\xE46_7": -8077258831303353630
+      "koivuvihre\xE46_12": -7988652224623904211
+      "koivuvihre\xE46_24": 6639825130736431762
+      "koivuvihre\xE46_20": -5917997846018315719
+      "koivuvihre\xE46_8": 6239781672394240502
+      "koivuvihre\xE46_21": -3152510297781102630
+      "koivuvihre\xE46_25": -9216450432074877159
+      "koivuvihre\xE46_23": -1412614915110429454
+      "koivuvihre\xE46_5": -2348744683825894882
+      "koivuvihre\xE46_9": -3190694252595834811
+      "koivuvihre\xE46_2": -5902775426631845441
+      "koivuvihre\xE46_14": 6744413656157855304
+      "koivuvihre\xE46_1": 750740432468433627
+      "koivuvihre\xE46_15": -3286312657945203153
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

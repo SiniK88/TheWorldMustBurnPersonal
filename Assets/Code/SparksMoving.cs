@@ -14,7 +14,7 @@ public class SparksMoving : MonoBehaviour
 
     public GameObject player;
     public Transform projectileEndParticle;
-
+    [SerializeField] Transform spritepic;
 
     public Tilemap map;
     public Tilemap mapMoving;
@@ -47,7 +47,11 @@ public class SparksMoving : MonoBehaviour
         }
         else rb.velocity = launchDirection.normalized * speed;
         */
+        //spritepic.rotation = transform.rotation;
+        
+
         Invoke("DestroySpark", lifeTime);
+
     }
     void Update()
     {

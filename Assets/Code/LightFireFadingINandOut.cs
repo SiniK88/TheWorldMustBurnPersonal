@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
+
 
 public class LightFireFadingINandOut : MonoBehaviour
 {
-    public Light2D light2d;
+    public UnityEngine.Rendering.Universal.Light2D light2d;
 
     [SerializeField] float radMin = 4f;
     [SerializeField] float radMax = 5f;

@@ -96,6 +96,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -105,8 +106,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -688,6 +689,31 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      KoivuVioletti_16: 4450716938941208878
+      KoivuVioletti_24: -2533935508306550775
+      KoivuVioletti_12: -2608712752905223872
+      KoivuVioletti_18: 1513926610544667824
+      KoivuVioletti_15: -521247835219342279
+      KoivuVioletti_3: 6331338993984217912
+      KoivuVioletti_5: 1596063872693027775
+      KoivuVioletti_1: 2384728587321773022
+      KoivuVioletti_2: -210803912175181614
+      KoivuVioletti_8: -6043421415116996375
+      KoivuVioletti_7: 5438442461819487650
+      KoivuVioletti_23: -5839629227742881601
+      KoivuVioletti_11: 3609044619379642029
+      KoivuVioletti_13: -6970474569088139198
+      KoivuVioletti_21: 8733698412226445151
+      KoivuVioletti_20: -6435300403861091946
+      KoivuVioletti_22: 4603121547426126131
+      KoivuVioletti_9: -3856149727929102147
+      KoivuVioletti_14: -8607559303507709200
+      KoivuVioletti_19: 3441981610513520162
+      KoivuVioletti_17: -4914223967423362404
+      KoivuVioletti_25: 4150889368974358888
+      KoivuVioletti_6: 7104474512538438573
+      KoivuVioletti_10: -6096602893687164860
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

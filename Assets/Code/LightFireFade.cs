@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
+
 public class LightFireFade : MonoBehaviour
 {
-    Light2D light2d;
+    UnityEngine.Rendering.Universal.Light2D light2d;
     [SerializeField] float speed = 3f;
     [SerializeField] float min = 0.4f;
     [SerializeField] float max = 3f;
     float counter = 0f;
     void Start()
     {
-        light2d = GetComponent<Light2D>();
+        light2d = GetComponent<UnityEngine.Rendering.Universal.Light2D>();
         Destroy(gameObject, 3.8f);
     }
 

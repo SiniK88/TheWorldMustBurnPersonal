@@ -87,6 +87,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -96,8 +97,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -616,6 +617,28 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      grassyellow1_16: -8466747244228427682
+      grassyellow1_9: -8216573940914052576
+      grassyellow1_1: -1425715936129943671
+      grassyellow1_4: 9175802025759756454
+      grassyellow1_7: 1939340433331235377
+      grassyellow1_11: -3437060954446061535
+      grassyellow1_17: -4038142891189843435
+      grassyellow1_13: -7066539312855092587
+      grassyellow1_5: -8688954263960813145
+      grassyellow1_20: -702937516109333028
+      grassyellow1_21: 2348058785676869822
+      grassyellow1_2: -8191866818083221872
+      grassyellow1_0: 6137178493608457829
+      grassyellow1_18: 7651197490474301836
+      grassyellow1_22: -9175336837603414450
+      grassyellow1_8: -1491207955686935445
+      grassyellow1_3: -2732055368983621996
+      grassyellow1_10: -3398727318714843552
+      grassyellow1_6: 7924207763155102564
+      grassyellow1_14: 2416303933632451593
+      grassyellow1_15: 6631564241733803700
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

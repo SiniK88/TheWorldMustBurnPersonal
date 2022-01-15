@@ -105,6 +105,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -114,8 +115,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -760,6 +761,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      puuturkoosi_0: -1747441180486177543
+      puuturkoosi_23: 1837919725447761861
+      puuturkoosi_10: -1875650305813250537
+      puuturkoosi_13: 5793600082602510936
+      puuturkoosi_3: 5313532996802431142
+      puuturkoosi_20: -3724252116790128654
+      puuturkoosi_7: 5231629338230675391
+      puuturkoosi_16: -9207691728971944896
+      puuturkoosi_2: -8928892419856403924
+      puuturkoosi_4: 7383763567442773014
+      puuturkoosi_26: 5705277164717165268
+      puuturkoosi_14: -4356797199647719051
+      puuturkoosi_1: 3930796704965335195
+      puuturkoosi_6: -6037778440868441673
+      puuturkoosi_21: 2900067272622362330
+      puuturkoosi_22: 6612147478295035079
+      puuturkoosi_25: -3202301712313637937
+      puuturkoosi_5: -5237528276341511701
+      puuturkoosi_11: -777802042695121529
+      puuturkoosi_12: 8300528112097684828
+      puuturkoosi_9: -1023780084963326198
+      puuturkoosi_18: -4793649635225137083
+      puuturkoosi_17: -2726394085750612281
+      puuturkoosi_19: 8942748513013196532
+      puuturkoosi_8: -1429229777807932205
+      puuturkoosi_24: -428847548935485274
+      puuturkoosi_15: -4257374771171304943
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

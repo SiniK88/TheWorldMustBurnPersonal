@@ -150,6 +150,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -159,8 +160,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -1120,6 +1121,49 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      SmallStuff_1: -8896293467296995232
+      SmallStuff_3: -4564426101638585178
+      SmallStuff_13: 5264430529573154959
+      SmallStuff_14: 863291548321498756
+      SmallStuff_5: -6592002028580244010
+      SmallStuff_22: -7565428553946280395
+      SmallStuff_18: 2805677710666390694
+      SmallStuff_26: 5202646284131490262
+      SmallStuff_27: 399118832368875743
+      SmallStuff_20: -692630382853061924
+      SmallStuff_17: -7692374161575585693
+      SmallStuff_23: -5273315289985535327
+      SmallStuff_15: -3658550283284901296
+      SmallStuff_0: 8076047400019404568
+      SmallStuff_40: -5564328300520074792
+      SmallStuff_6: -7910100284612981358
+      SmallStuff_29: 2097928559248105481
+      SmallStuff_28: -2669479707338905041
+      SmallStuff_35: -5980881619458801256
+      SmallStuff_12: 831346326581922539
+      SmallStuff_21: -7753262034984638462
+      SmallStuff_30: -495992233161243677
+      SmallStuff_4: 6481116894168555476
+      SmallStuff_9: 8041682148978896362
+      SmallStuff_38: 1288053444710907527
+      SmallStuff_19: 4936694004560022829
+      SmallStuff_24: -434100329211181865
+      SmallStuff_33: 1668851857638179272
+      SmallStuff_36: -8363285546046668912
+      SmallStuff_37: -5996590809200591782
+      SmallStuff_39: 1803665972628171893
+      SmallStuff_25: 3251664611590244413
+      SmallStuff_11: 485549105211680191
+      SmallStuff_16: 6412548747970796307
+      SmallStuff_31: 6203885273283110539
+      SmallStuff_41: -3955168670100216314
+      SmallStuff_32: -8584230043750274531
+      SmallStuff_2: -3933560339013312312
+      SmallStuff_10: -5914416183478763009
+      SmallStuff_8: 4098443218894769661
+      SmallStuff_7: 8215066237524534373
+      SmallStuff_34: 6629492724602093128
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
