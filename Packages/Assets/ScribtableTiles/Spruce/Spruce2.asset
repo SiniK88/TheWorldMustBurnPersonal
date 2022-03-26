@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c549008f833ef094cb4efe577cd9439c, type: 3}
+  m_Name: Spruce2
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 11400000, guid: d13761b747f11fc49827dade223a31f3, type: 2}
+  - {fileID: 11400000, guid: e58f0ba34f614934d9c54085886b4ade, type: 2}
+  - {fileID: 11400000, guid: 446758bff6df1804b953c331456c9bb1, type: 2}
+  - {fileID: 11400000, guid: c38725dcd11f57e46bada3f0a7457f45, type: 2}
+  - {fileID: 11400000, guid: a24b2cb05bfae1f4f9ab68a7f9face11, type: 2}
+  - {fileID: 11400000, guid: 8b12d8fc28df0654d8f345512ab992e6, type: 2}
+  - {fileID: 11400000, guid: c8429fde0cc90fc46b420a3b8391d8bd, type: 2}
+  - {fileID: 11400000, guid: 7895eb41f5241594f826463d97d26e6e, type: 2}
+  - {fileID: 11400000, guid: 642457a84b9aea44d9e772f5ba741150, type: 2}
+  - {fileID: 11400000, guid: 52918ddbbcb9c9f40886a7cc600726f3, type: 2}
+  - {fileID: 11400000, guid: 55cbfb4556580b54195c0afc91885846, type: 2}
+  - {fileID: 11400000, guid: cd24769f6eab0114594ed4ad77b1bbe2, type: 2}
+  - {fileID: 11400000, guid: aa87d80c83b04cc4696e14fbcf70545e, type: 2}
+  - {fileID: 11400000, guid: 51f20491ceeefe443b169d42ac6398f6, type: 2}
+  - {fileID: 11400000, guid: 23de09806eba27b4b8ea729afb47b598, type: 2}
+  - {fileID: 11400000, guid: b9d7a492b509ac54e967951c480a9d4b, type: 2}
+  - {fileID: 11400000, guid: b0e86de52652de646b8444c7cb3b0d42, type: 2}
+  - {fileID: 11400000, guid: 5c6b5993806a298418616db9fceb31a4, type: 2}
+  - {fileID: 11400000, guid: ba631efd56dc1044b864a76f068e4296, type: 2}
+  - {fileID: 11400000, guid: a22ef74acdd38df4fb8531cade2fa80d, type: 2}
+  - {fileID: 11400000, guid: c86328935b6d65e4faa7acfeb7e52864, type: 2}
+  - {fileID: 11400000, guid: fa60156a8234108469e205a0d9d5551b, type: 2}
+  burned: {fileID: 1486550241564588269, guid: 5a7ca341f8a245a4c89bb3b3ad19bc0d, type: 3}
+  spreadChange: 100
+  spreadInterwall: 0.7
+  burnTime: 4
+  canBurn: 1
+  ashTile: 0
+  groudTile: 0
+  waterTile: 0
+  leavesTile: 0
+  secret: 0

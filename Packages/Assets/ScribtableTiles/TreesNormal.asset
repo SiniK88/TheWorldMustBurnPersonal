@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c549008f833ef094cb4efe577cd9439c, type: 3}
+  m_Name: TreesNormal
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 11400000, guid: a46025ebc633cac41813faacb4e09c09, type: 2}
+  - {fileID: 11400000, guid: 4cea4c3e849ce0345a8131282e368030, type: 2}
+  - {fileID: 11400000, guid: 28df061d3b9209e47a57fb54ac82a30b, type: 2}
+  - {fileID: 11400000, guid: 44d819ebf21f7a0468a9f9309b79ad64, type: 2}
+  walkingSpeed: 0
+  spreadChange: 100
+  spreadInterwall: 1
+  burnTime: 5
+  canBurn: 1
+  ashTile: 0
