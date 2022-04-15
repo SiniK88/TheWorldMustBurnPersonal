@@ -32,6 +32,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b0e86de52652de646b8444c7cb3b0d42, type: 2}
   - {fileID: 11400000, guid: 5c6b5993806a298418616db9fceb31a4, type: 2}
   - {fileID: 11400000, guid: ba631efd56dc1044b864a76f068e4296, type: 2}
+  - {fileID: 11400000, guid: a22ef74acdd38df4fb8531cade2fa80d, type: 2}
+  - {fileID: 11400000, guid: c86328935b6d65e4faa7acfeb7e52864, type: 2}
+  - {fileID: 11400000, guid: fa60156a8234108469e205a0d9d5551b, type: 2}
   burned: {fileID: 1486550241564588269, guid: 5a7ca341f8a245a4c89bb3b3ad19bc0d, type: 3}
   spreadChange: 100
   spreadInterwall: 0.7

@@ -204,6 +204,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3e7b3399d2824b942b080ec593fb65c4, type: 2}
   - {fileID: 11400000, guid: 7be971414382f0247bfa2e09719c5868, type: 2}
   - {fileID: 11400000, guid: a70d366a9477639438229b2b99e0da09, type: 2}
+  - {fileID: 11400000, guid: 076802acf1eae6c47bc46dfdac4b2dec, type: 2}
+  - {fileID: 11400000, guid: 35d54e20d1d17da44acd62fbf25c647b, type: 2}
+  - {fileID: 11400000, guid: e4da51621a5417041a97f05b82157a67, type: 2}
+  - {fileID: 11400000, guid: 3a7da3098c0ac52408cdccc776867179, type: 2}
+  - {fileID: 11400000, guid: 2faf0dfdacab2f942b158cbb3ad04c7f, type: 2}
+  - {fileID: 11400000, guid: bc4d780fecb80a44b8207e0c34878dbb, type: 2}
+  - {fileID: 11400000, guid: c47cc41959d16c04ab5e0c5b468fea0a, type: 2}
+  - {fileID: 11400000, guid: 3db761d867c836b479d5af56e614a21c, type: 2}
+  - {fileID: 11400000, guid: 19253b34a05bae345bbef5b6e48e14bb, type: 2}
+  - {fileID: 11400000, guid: 02bf433c12eb79f4f9737f3b6674e85e, type: 2}
+  - {fileID: 11400000, guid: 5111cb43b7a9f8445a5ed1087e6dd755, type: 2}
   burned: {fileID: 0}
   spreadChange: 100
   spreadInterwall: 0.6

@@ -20,6 +20,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 22867c43be99e7448a177cc43f239d30, type: 2}
   - {fileID: 11400000, guid: 5f37c582c40426349b25f1ed72f4b629, type: 2}
   - {fileID: 11400000, guid: b8d2723dfefde994ebc9bfa33313ace1, type: 2}
+  - {fileID: 11400000, guid: d484153e8c5f0644aba5b18f07a6fd18, type: 2}
   burned: {fileID: 5046791662663475059, guid: 67cbd630b8ce8374f9c27778b68f9fce, type: 3}
   spreadChange: 100
   spreadInterwall: 0.7

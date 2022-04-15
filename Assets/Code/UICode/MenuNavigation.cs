@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class MenuNavigation : MonoBehaviour
 {
-    public GameObject levelMenu, deathMenu, levelEndMenu, pauseMenu, mixMenuStuff;
-    public GameObject levelFirstButton, levelEndFirstButton, DeathFirstButton, PauseFirstButton;
+    public GameObject levelMenu, deathMenu, levelEndMenu, pauseMenu, mixMenuStuff, TitleMunu, SavesMenu, StartSavesMenu;
+    public GameObject levelFirstButton, levelEndFirstButton, DeathFirstButton, PauseFirstButton, TitleFirstButton, SaveFirstButton, StartFirstButton;
 
     public GameObject lv1Score, lv2Score, lv3Score;
 
@@ -24,6 +24,10 @@ public class MenuNavigation : MonoBehaviour
     private void Start() {
         levels = GameObject.FindGameObjectsWithTag("Level");
         locks = GameObject.FindGameObjectsWithTag("Locks");
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(TitleFirstButton);
+
     }
 
     private void Update() {
@@ -131,9 +135,38 @@ public class MenuNavigation : MonoBehaviour
 
     public void OpenMixedMenuStuff() {
         mixMenuStuff.SetActive(true);
+
     }
 
+    public void CloseTitleMenu() {
+        TitleMunu.SetActive(false);
+    }
 
+    public void OpenTitleMenu() {
+        TitleMunu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(TitleFirstButton);
+    }
+
+    public void CloseSavesMenu() {
+        SavesMenu.SetActive(false);
+    }
+
+    public void OpenSavesMenu() {
+        SavesMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(SaveFirstButton);
+    }
+
+    public void CloseStartSavesMenu() {
+        StartSavesMenu.SetActive(false);
+    }
+
+    public void OpenStartSavesMenu() {
+        StartSavesMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(StartFirstButton);
+    }
 
     public IEnumerator DoFade(CanvasGroup canvasGroup, float start, float end) {
         float counter = 0f;
@@ -147,6 +180,7 @@ public class MenuNavigation : MonoBehaviour
     }
 
     public void UnlockAllLevels() {
+        print("unlock key pressed");
         for (int j = 0; j < locks.Length; j++) {
             locks[j].SetActive(false);
         }

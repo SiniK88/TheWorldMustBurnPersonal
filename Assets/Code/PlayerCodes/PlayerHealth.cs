@@ -9,8 +9,11 @@ public class PlayerHealth : MonoBehaviour
     private MapManager mapManager;
 
     public Tilemap map;
+    public Tilemap mapMoving;
+
 
     public GameObject player;
+    GameObject playerParticles;
     public int health = 1;
     public float timer = 1f;
 
@@ -25,9 +28,12 @@ public class PlayerHealth : MonoBehaviour
     void Start() {
         //DeathUI = GameObject.Find("Menu");
         map = GameObject.FindGameObjectWithTag("Map").GetComponent<Tilemap>();
+        mapMoving = GameObject.FindGameObjectWithTag("MovingMap").GetComponent<Tilemap>();
+
         menuNav = FindObjectOfType<MenuNavigation>();
         playerController = FindObjectOfType<RayCastPlayer>();
         playLoops = FindObjectOfType<PlayLoops>();
+        playerParticles = GameObject.Find("AllPlayerParticles");
 
         //fade = FindObjectOfType<FadePanel>();
     }
@@ -37,6 +43,7 @@ public class PlayerHealth : MonoBehaviour
     {
         TouchWaterY(1);
         if(health == 0) {
+            playerParticles.SetActive(false);
             if (timer > 0) {
                 timer -= Time.deltaTime;
                 if (timer <= 0) {
@@ -72,15 +79,22 @@ public class PlayerHealth : MonoBehaviour
         Destroy(transform.parent.gameObject);
     }
 
-    // damege tarvii myös timerin jos voi ottaa enemmän kuin yhden damagen
+    // damege tarvii myï¿½s timerin jos voi ottaa enemmï¿½n kuin yhden damagen
     void TouchWaterY(int damage) {
         Vector2 playerPosition = player.transform.position;
         Vector3Int playergridPos = map.WorldToCell(playerPosition);
+        Vector3Int playergridPosMoving = mapMoving.WorldToCell(playerPosition);
         playergridPos.y -= 1;
+        playergridPosMoving.y -= 1;
 
         TileData data = mapManager.GetTileData(playergridPos);
+        TileData dataMoving = mapManager.GetTileData(playergridPosMoving);
         if (map.HasTile(playergridPos) && data.waterTile == true) {
             Damaged(damage);
+        }
+        if (map.HasTile(playergridPosMoving) && dataMoving.waterTile == true) {
+            Damaged(damage);
+            print("osui veteen");
         }
     }
 

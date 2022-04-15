@@ -36,9 +36,9 @@ TagManager:
   - Confiner
   - Pixel
   - PlayerBody
-  - 
-  - 
-  - 
+  - CameraLayer2
+  - CameraLayer1
+  - reflection
   - 
   - 
   - 

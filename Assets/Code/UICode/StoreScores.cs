@@ -24,23 +24,32 @@ public class StoreScores : MonoBehaviour
     // should make highscores etc. as array/list. Just as levels are
 
 
-    public float[] bronceHighScores = new float[5];
-    public float[] silverHighScores = new float[5];
-    public float[] goldHighScores = new float[5];
+    public float[] bronceHighScores;
+    public float[] silverHighScores;
+    public float[] goldHighScores;
 
-    public float[] bronceHighSeconds = new float[5];
-    public float[] silverHighSeconds = new float[5];
-    public float[] goldHighSeconds = new float[5];
-    public int[] tileAmounts = new int[5];
+    public float[] bronceHighSeconds;
+    public float[] silverHighSeconds;
+    public float[] goldHighSeconds;
+    public int[] tileAmounts;
 
     public GameObject[] levels;
     public GameObject[] locks;
 
     public GameObject player;
 
-    private void Start() {
+    private async void Start() {
         //levels = GameObject.FindGameObjectsWithTag("Level");
-        locks = GameObject.FindGameObjectsWithTag("Locks");
+
+        bronceHighScores = new float[levelAmount];
+        silverHighScores = new float[levelAmount];
+        goldHighScores = new float[levelAmount];
+        bronceHighSeconds = new float[levelAmount];
+        silverHighSeconds = new float[levelAmount];
+        goldHighSeconds = new float[levelAmount];
+        //locks = GameObject.FindGameObjectsWithTag("Locks");
+
+
     }
 
     void Update() {
@@ -61,13 +70,22 @@ public class StoreScores : MonoBehaviour
         */
 
         // make these better later. Doesn't need to run on every frame, just occasionally. For example, run some function when level ends.
+        if(SaveManager.instance.hasLoaded == true){
+            bronceHighScores = SaveManager.instance.activeSave.bronceHighScoresSave;
+            silverHighScores = SaveManager.instance.activeSave.silverHighScoresSave;
+            goldHighScores = SaveManager.instance.activeSave.goldHighScoresSave;
+            bronceHighSeconds = SaveManager.instance.activeSave.bronceHighSecondsSave;
+            silverHighSeconds = SaveManager.instance.activeSave.silverHighSecondsSave;
+            goldHighSeconds = SaveManager.instance.activeSave.goldHighSecondsSave;
+        }
 
-        for (int j = 0; j < levels.Length; j++) {
+        for (int j = 0; j < levels.Length-1; j++) {
             if (bronceHighScores[j] >= 0.5 || silverHighScores[j] >= 0.5 || goldHighScores[j] >= 0.5) {
-                levels[j + 1].GetComponent<MovingOnLevelsMap>().locked = false;
-                locks[j + 1].SetActive(false);
+                levels[j+1].GetComponent<MovingOnLevelsMap>().locked = false;
+                locks[j+1].SetActive(false);
             }
         }
+
 
         //if (bronceHighScores[0] >= 0.5 || silverHighScores[0] >= 0.5 || goldHighScores[0] >= 0.5) {
         //    levels[1].GetComponent<MovingOnLevelsMap>().locked = false;

@@ -1,11 +1,7 @@
 {
   "dependencies": {
     "com.unity.2d.animation": {
-<<<<<<< HEAD
       "version": "7.0.3",
-=======
-      "version": "6.0.5",
->>>>>>> 89c46a9b6c0f617b250d8655a080a001531e20b8
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -43,21 +39,12 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.psdimporter": {
-<<<<<<< HEAD
       "version": "6.0.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.2d.animation": "7.0.3",
         "com.unity.2d.common": "6.0.2",
-=======
-      "version": "5.0.4",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.2d.common": "5.0.0",
-        "com.unity.2d.animation": "6.0.4",
->>>>>>> 89c46a9b6c0f617b250d8655a080a001531e20b8
         "com.unity.2d.sprite": "1.0.0"
       },
       "url": "https://packages.unity.com"
@@ -69,11 +56,7 @@
       "dependencies": {}
     },
     "com.unity.2d.spriteshape": {
-<<<<<<< HEAD
       "version": "7.0.3",
-=======
-      "version": "6.0.1",
->>>>>>> 89c46a9b6c0f617b250d8655a080a001531e20b8
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -109,22 +92,14 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.cinemachine": {
-<<<<<<< HEAD
       "version": "2.8.4",
-=======
-      "version": "2.7.8",
->>>>>>> 89c46a9b6c0f617b250d8655a080a001531e20b8
       "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
-<<<<<<< HEAD
       "version": "1.15.4",
-=======
-      "version": "1.11.2",
->>>>>>> 89c46a9b6c0f617b250d8655a080a001531e20b8
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -150,11 +125,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-<<<<<<< HEAD
       "version": "2.0.12",
-=======
-      "version": "2.0.11",
->>>>>>> 89c46a9b6c0f617b250d8655a080a001531e20b8
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -250,11 +221,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-<<<<<<< HEAD
       "version": "1.6.3",
-=======
-      "version": "1.5.6",
->>>>>>> 89c46a9b6c0f617b250d8655a080a001531e20b8
       "depth": 0,
       "source": "registry",
       "dependencies": {

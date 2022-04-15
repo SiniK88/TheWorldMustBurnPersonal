@@ -71,9 +71,10 @@ public class LevelEnd : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Player")) {
             levelend = true;
+
             LevelEndParticles();
             playLoops.StopLevelMusic();
-
+            SaveManager.instance.SaveBin();
             menuNav.OpenLevelEndMenu();
             EndLevelScoreTextCommon = GameObject.Find("CommonEndText").GetComponent<Text>();
             EndLevelScoreTextHighScore = GameObject.Find("HighScoreEndText").GetComponent<Text>();
