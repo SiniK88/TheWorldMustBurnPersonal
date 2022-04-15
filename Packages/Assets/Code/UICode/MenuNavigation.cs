@@ -180,6 +180,7 @@ public class MenuNavigation : MonoBehaviour
     }
 
     public void UnlockAllLevels() {
+        print("unlock key pressed");
         for (int j = 0; j < locks.Length; j++) {
             locks[j].SetActive(false);
         }

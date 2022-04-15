@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_PixelShader
-  m_Shader: {fileID: -6465566751694194690, guid: 28e8cb854a19f874f96e9a066a76f11d, type: 3}
+  m_Name: Shader Graphs_WaterReflection
+  m_Shader: {fileID: -6465566751694194690, guid: cd6ccc2b2f482984f85758e252b032bd, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -20,7 +20,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 8400000, guid: ecf501f3f7e0ee14fa496f6e6e011b03, type: 2}
+        m_Texture: {fileID: 2800000, guid: 0f7ef4011886fe04d9ee1b8ca3566b69, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RenderTexture:
+        m_Texture: {fileID: 8400000, guid: 36b559aab26c06046b95d0f413c4304e, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2D:
+        m_Texture: {fileID: 8400000, guid: 36b559aab26c06046b95d0f413c4304e, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WaterTexture:
+        m_Texture: {fileID: 2800000, guid: a844fd6f8a4f9a846b30dd8a4209979b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -37,21 +49,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _QueueControl: 0
-    - _QueueOffset: 0
+    - _Speed: 0.05
+    - _Strenght: 0.8
+    - _alpha: 0.95
     m_Colors:
-    - _EdgeColor: {r: 1, g: 1, b: 1, a: 0.24705882}
+    - _Color: {r: 0.7249021, g: 0.8065972, b: 0.8490566, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &8722684667681831463
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
