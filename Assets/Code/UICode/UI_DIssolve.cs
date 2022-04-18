@@ -23,15 +23,15 @@ public class UI_DIssolve : MonoBehaviour
 
         public void DissolveFunctio() {
             print("klicked");
-            fade -= Time.deltaTime;
+            fade -= Time.deltaTime * 40;
 
-            if (fade <= 0f) {
+            if (fade <= -90f) {
                 print("fade happened");
                 isDissolving = false;
-                fade = 0;
+                fade = -90;
             }
 
-            dissolveMat.SetFloat("_Dissolve", fade);
+            dissolveMat.SetFloat("_CutOff", fade);
     }
 
     public void KlickDissolve(){
