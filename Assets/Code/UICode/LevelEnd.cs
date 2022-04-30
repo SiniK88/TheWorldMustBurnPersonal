@@ -74,7 +74,7 @@ public class LevelEnd : MonoBehaviour
 
             LevelEndParticles();
             playLoops.StopLevelMusic();
-            SaveManager.instance.SaveBin();
+            //SaveManager.instance.SaveBin();
             menuNav.OpenLevelEndMenu();
             EndLevelScoreTextCommon = GameObject.Find("CommonEndText").GetComponent<Text>();
             EndLevelScoreTextHighScore = GameObject.Find("HighScoreEndText").GetComponent<Text>();

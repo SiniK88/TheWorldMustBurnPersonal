@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class StoreScores : MonoBehaviour
 {
-    public int levelAmount = 5;
+    public int levelAmount = 20;
 
 
 
@@ -37,6 +37,7 @@ public class StoreScores : MonoBehaviour
     public GameObject[] locks;
 
     public GameObject player;
+    bool movePlayer = false;
 
     private async void Start() {
         //levels = GameObject.FindGameObjectsWithTag("Level");
@@ -77,6 +78,13 @@ public class StoreScores : MonoBehaviour
             bronceHighSeconds = SaveManager.instance.activeSave.bronceHighSecondsSave;
             silverHighSeconds = SaveManager.instance.activeSave.silverHighSecondsSave;
             goldHighSeconds = SaveManager.instance.activeSave.goldHighSecondsSave;
+            if(movePlayer == false){
+                var xpos = SaveManager.instance.activeSave.respawnPosition[0];
+                var ypos = SaveManager.instance.activeSave.respawnPosition[1];
+                var zpos = SaveManager.instance.activeSave.respawnPosition[2];
+                player.transform.position = new Vector3(xpos,ypos,zpos);
+                movePlayer = true;
+            }
         }
 
         for (int j = 0; j < levels.Length-1; j++) {

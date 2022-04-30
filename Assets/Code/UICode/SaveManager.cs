@@ -32,7 +32,7 @@ public class SaveManager : MonoBehaviour
         }
 
         if(Input.GetKeyDown(KeyCode.H)){
-        DeleteSavedData();
+        DeleteSavedDataBin();
         }
     }
 
@@ -118,13 +118,13 @@ public class SaveData {
     public string saveName;
     public float[] respawnPosition = new float[3];
     public int test;
-    public float[] bronceHighScoresSave = new float[5];
-    public float[] silverHighScoresSave = new float[5];
-    public float[] goldHighScoresSave = new float[5];
+    public float[] bronceHighScoresSave = new float[20];
+    public float[] silverHighScoresSave = new float[20];
+    public float[] goldHighScoresSave = new float[20];
 
-    public float[] bronceHighSecondsSave = new float[5];
-    public float[] silverHighSecondsSave = new float[5];
-    public float[] goldHighSecondsSave = new float[5];
+    public float[] bronceHighSecondsSave = new float[20];
+    public float[] silverHighSecondsSave = new float[20];
+    public float[] goldHighSecondsSave = new float[20];
 
 
 }

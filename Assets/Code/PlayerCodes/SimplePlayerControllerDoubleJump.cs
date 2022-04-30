@@ -31,7 +31,7 @@ public class SimplePlayerControllerDoubleJump : MonoBehaviour
 
     public Camera mainCamera;
     Vector3 cameraPos;
-    public ParticleSystem kipin‰; 
+    public ParticleSystem kipin√§; 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -67,7 +67,7 @@ public class SimplePlayerControllerDoubleJump : MonoBehaviour
             jumps++;
             rb.velocity = Vector2.zero;
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            CreateKipin‰();
+            CreateKipin√§();
         } //else if(Input.GetButtonDown("Jump") && maxJumps == 0 && grounded == true) {
             //rb.velocity = Vector2.up * jumpForce;
         //}
@@ -145,7 +145,7 @@ public class SimplePlayerControllerDoubleJump : MonoBehaviour
         }*/
     }
 
-    void CreateKipin‰() {
-        kipin‰.Play();
+    void CreateKipin√§() {
+        kipin√§.Play();
     }
 }

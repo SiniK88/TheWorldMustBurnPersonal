@@ -15,7 +15,7 @@ public class RayCastPlayer : MonoBehaviour
     public float accelerationTimeGrounded = 0.1f;
     public float accelerationTimeAirborne = 0.2f;
 
-    float velocityXSmoothing;
+    float velocityXSmoothing; 
     [SerializeField] int maxJumps = 2;
     [SerializeField] int jumps = 0;
     Vector3 velocity;
@@ -37,8 +37,8 @@ public class RayCastPlayer : MonoBehaviour
     RayCast2DController controller;
     
 
-    public ParticleSystem kipin‰;
-    public ParticleSystem dashKipin‰;
+    public ParticleSystem kipin√§;
+    public ParticleSystem dashKipin√§;
     public GameObject dashBlock;
     PlayerHealth playerHealth;
     GameStart gameStart;
@@ -103,7 +103,7 @@ public class RayCastPlayer : MonoBehaviour
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
  
         if (Input.GetKeyDown(KeyCode.Space) && controller.collisions.below) {
-            CreateKipin‰();
+            CreateKipin√§();
             velocity.y = jumpVelocity;
         }
 
@@ -117,7 +117,7 @@ public class RayCastPlayer : MonoBehaviour
             velocity = Vector2.zero;
             velocity.y = jumpVelocity;
             //rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            CreateKipin‰();
+            CreateKipin√§();
         }
 
         float targetVelocityX = input.x * moveSpeed;
@@ -133,11 +133,11 @@ public class RayCastPlayer : MonoBehaviour
 
            Dash();
     }
-    void CreateKipin‰() {
-        kipin‰.Play();
+    void CreateKipin√§() {
+        kipin√§.Play();
     }
-    void CreateDashKipin‰() {
-        dashKipin‰.Play();
+    void CreateDashKipin√§() {
+        dashKipin√§.Play();
     }
 
 
@@ -149,12 +149,12 @@ public class RayCastPlayer : MonoBehaviour
             if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButton("Dash")) && canDash == true) {
                 AudioFW.Play("SwushShort");
                 if (moveInput < 0) {
-                    CreateDashKipin‰();
+                    CreateDashKipin√§();
                     direction = 1;
                     dash = true;
                     //dashBlock.SetActive(true);
                 } else if (moveInput > 0) {
-                    CreateDashKipin‰();
+                    CreateDashKipin√§();
                     direction = 2;
                     dash = true;
                     //dashBlock.SetActive(true);

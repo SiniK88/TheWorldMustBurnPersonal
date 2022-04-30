@@ -22,8 +22,8 @@ public class MenuNavigation : MonoBehaviour
     public MenuAudio menuAudio;
 
     private void Start() {
-        levels = GameObject.FindGameObjectsWithTag("Level");
-        locks = GameObject.FindGameObjectsWithTag("Locks");
+        //levels = GameObject.FindGameObjectsWithTag("Level");
+        //locks = GameObject.FindGameObjectsWithTag("Locks");
 
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(TitleFirstButton);
