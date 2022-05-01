@@ -33758,7 +33758,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 86956123}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SaveUI, Assembly-CSharp
         m_MethodName: CloseAlreadyExists
         m_Mode: 1
@@ -35832,7 +35832,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 86956123}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SaveUI, Assembly-CSharp
         m_MethodName: SaveOver1
         m_Mode: 1
@@ -35844,7 +35844,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 86956123}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SaveUI, Assembly-CSharp
         m_MethodName: CloseAlreadyExists
         m_Mode: 1
@@ -38293,7 +38293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1551190218
 Transform:
   m_ObjectHideFlags: 0
@@ -38448,7 +38448,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1566731331}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 299539425}
+        m_TargetAssemblyTypeName: MenuNavigation, Assembly-CSharp
+        m_MethodName: CloseTitleMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SaveUI, Assembly-CSharp
+        m_MethodName: ContinueGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 299539425}
+        m_TargetAssemblyTypeName: MenuNavigation, Assembly-CSharp
+        m_MethodName: OpenMixedMenuStuff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1586956044
 GameObject:
   m_ObjectHideFlags: 0
@@ -41950,7 +41986,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 86956123}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SaveUI, Assembly-CSharp
         m_MethodName: LoadSave
         m_Mode: 5
@@ -42423,7 +42459,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 86956123}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SaveUI, Assembly-CSharp
         m_MethodName: CreateNewSave
         m_Mode: 3
@@ -42438,6 +42474,18 @@ MonoBehaviour:
       - m_Target: {fileID: 299539425}
         m_TargetAssemblyTypeName: MenuNavigation, Assembly-CSharp
         m_MethodName: CloseStartSavesMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 299539425}
+        m_TargetAssemblyTypeName: MenuNavigation, Assembly-CSharp
+        m_MethodName: OpenMixedMenuStuff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -44880,7 +44928,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 86956123}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SaveUI, Assembly-CSharp
         m_MethodName: CreateNewSave
         m_Mode: 3
@@ -45351,7 +45399,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 86956123}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SaveUI, Assembly-CSharp
         m_MethodName: LoadSave
         m_Mode: 5
@@ -46919,7 +46967,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 86956123}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SaveUI, Assembly-CSharp
         m_MethodName: LoadSave
         m_Mode: 5
@@ -47894,7 +47942,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 86956123}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SaveUI, Assembly-CSharp
         m_MethodName: CreateNewSave
         m_Mode: 3
@@ -47909,6 +47957,18 @@ MonoBehaviour:
       - m_Target: {fileID: 299539425}
         m_TargetAssemblyTypeName: MenuNavigation, Assembly-CSharp
         m_MethodName: CloseStartSavesMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 299539425}
+        m_TargetAssemblyTypeName: MenuNavigation, Assembly-CSharp
+        m_MethodName: OpenMixedMenuStuff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -49874,7 +49934,6 @@ GameObject:
   - component: {fileID: 299539425}
   - component: {fileID: 5268203859097568799}
   - component: {fileID: 1900588136}
-  - component: {fileID: 86956123}
   m_Layer: 0
   m_Name: Menu
   m_TagString: Menu
@@ -50129,35 +50188,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &86956123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9202896194601418467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6a50f2a082fb1946ae721db253cc877, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeInfo:
-    saveNameInfo: info
-    lastSaveNumb: 0
-    testbool1: 0
-    testbool2: 0
-    testbool3: 0
-  SavesMenu: {fileID: 3553004688095773663}
-  alreadyExists: {fileID: 1852773470}
-  Save1: {fileID: 1603757211243613587}
-  Save1x: {fileID: 643203526902013954}
-  Save2: {fileID: 1663508897678509612}
-  Save2x: {fileID: 4081560267222677996}
-  Save3: {fileID: 5072604239891423451}
-  Save3x: {fileID: 8982305532431605843}
-  saveButton1: {fileID: 5711713375940231944}
-  saveButton2: {fileID: 6366458639208723485}
-  saveButton3: {fileID: 8122003136867513358}
 --- !u!1001 &2592061092156148527
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -105,7 +105,7 @@ public class ScoreCounter : MonoBehaviour
             }
         //}
         SaveManager.instance.SaveBin();
-
+        SaveUI.instance.SaveBinInfo();
     }
 
 

@@ -30,6 +30,7 @@ public static SaveUI instance;
 
     void Start()
     {
+        instance = this;
         LoadBinInfo();
         UpdateSaveText();
     }
@@ -37,6 +38,15 @@ public static SaveUI instance;
     // Update is called once per frame
     void Update()
     {
+
+        if(Input.GetKeyDown(KeyCode.Y)){
+        SaveBinInfo();
+        }
+
+        if(Input.GetKeyDown(KeyCode.P)){
+        LoadBinInfo();
+        }
+
         if(Input.GetKeyDown(KeyCode.H)){
         DeleteInfoBin();
         }
@@ -163,6 +173,23 @@ public void DeleteInfoBin(){
             }
         }
     }
+
+    public void ContinueGame(){
+
+
+        if(activeInfo.lastSaveNumb == 1){
+            SaveManager.instance.activeSave.saveName = "save1";
+        }
+               if(activeInfo.lastSaveNumb == 2){
+            SaveManager.instance.activeSave.saveName = "save2";
+        } 
+                if(activeInfo.lastSaveNumb == 3){
+            SaveManager.instance.activeSave.saveName = "save3";
+        }
+        SaveManager.instance.LoadBin();
+        }
+    
+
 
     public void SaveOver1(){
         if(saveNumber == 1) {
