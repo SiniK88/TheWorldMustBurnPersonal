@@ -69,7 +69,7 @@ public class PlayerHealth : MonoBehaviour
             //playerController.DeathAnim();
             //anim.Play("FadeIn");
             //anim.Play("FadeOut");
-            Destroy(transform.parent.gameObject, 3f);
+            Destroy(transform.parent.gameObject, 0.5f);
             menuNav.OpenDeathMenu();
 
         }

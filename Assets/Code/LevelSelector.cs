@@ -13,31 +13,48 @@ public class LevelSelector : MonoBehaviour
     public GameObject currentLevel;
 
     public int levelNum;
+    float delay = 0.5f;
 
     void Start(){
         levels = GameObject.FindGameObjectsWithTag("Level");
     }
 
-        private void Update(){
-        if(Input.GetKeyDown(KeyCode.N)){
-            print(" something"); 
-            print( "current level number is " + levelNum);
-            FindCurrentLevelNumber();
-        }
-    }
+
 
 
     public void LoadLevels( int level) {
+        FindCurrentLevelNumber();
         currentLevel = Instantiate(levelsAvailable[level]) as GameObject;
         currentLevel.transform.position = new Vector3(0, 0, 0);
             //Instantiate(levelsAvailable[level], new Vector3(0, 0, 0), Quaternion.identity);
             menuAudio.StopMenuMusic();
 
     }
+
+    public IEnumerator LoadLevelsDelay( int level, float delay) {
+        yield return new WaitForSeconds(delay);
+
+        FindCurrentLevelNumber();
+        currentLevel = Instantiate(levelsAvailable[level-1]) as GameObject;
+        currentLevel.transform.position = new Vector3(0, 0, 0);
+            //Instantiate(levelsAvailable[level], new Vector3(0, 0, 0), Quaternion.identity);
+            menuAudio.StopMenuMusic();
+        //yield return new WaitForSeconds(delay);
+    }
+
+    public void StartLoadLevelsCoroutine(){
+        StartCoroutine(LoadLevelsDelay(levelNum, delay));
+    }
+
+    public void DestroyCurrentLevel(){
+        Destroy(currentLevel);
+        StartCoroutine(LoadLevelsDelay(levelNum, delay));
+
+    }
     
     public void LoadCurrentLevel(){
-
-        currentLevel = Instantiate(levelsAvailable[levelNum]) as GameObject;
+        
+        currentLevel = Instantiate(levelsAvailable[levelNum-1]) as GameObject;
         currentLevel.transform.position = new Vector3(0, 0, 0);
     }
 
@@ -45,7 +62,7 @@ public class LevelSelector : MonoBehaviour
         Destroy(currentLevel);
     }
 
-    // jostain syystä pitää painaa kahdesti findcurrentlevelnumber, että vaihtuu. Pitää korjata
+
     public void FindCurrentLevelNumber(){
         for(int i = 0; i < levels.Length; i++){
             if( levels[i].GetComponent<MovingOnLevelsMap>().currentLevel == true ){
