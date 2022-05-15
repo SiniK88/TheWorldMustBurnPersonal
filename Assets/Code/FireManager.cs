@@ -199,7 +199,7 @@ public class FireManager : MonoBehaviour
 
                     Debug.DrawLine(playerPosition2, pos, Color.white);
                     if (map.HasTile(gpos) && data.canBurn == true) {
-                        if (activeFires.Contains(gpos)) return; // ei sytytetä palavaa uudestaan
+                        if (activeFires.Contains(gpos)) return; // ei sytytetï¿½ palavaa uudestaan
                         SetTileOnFire(gpos, data);
                     }
             } else Debug.DrawLine(playerPosition2, pos, Color.red);
@@ -223,7 +223,7 @@ public class FireManager : MonoBehaviour
 
                 Debug.DrawLine(playerPosition2, pos, Color.white);
                 if (mapMoving.HasTile(gpos) && data.canBurn == true) {
-                    if (activeFires.Contains(gpos)) return; // ei sytytetä palavaa uudestaan
+                    if (activeFires.Contains(gpos)) return; // ei sytytetï¿½ palavaa uudestaan
                     SetTileOnFireMoving(gpos, data);
                 }
             } else Debug.DrawLine(playerPosition2, pos, Color.red);
@@ -285,7 +285,15 @@ public class FireManager : MonoBehaviour
 
     }
 
-    // tää ainakin toimii :) mutta ei ehkä paras tapa
+    public void secretTileEffects(Vector3Int position){
+
+        TileData data = mapManager.GetTileData(position);
+        ParticleSystem secretParticle = Instantiate(data.secretParticle);
+        secretParticle.transform.position = map.GetCellCenterWorld(position);
+
+    }
+
+    // tï¿½ï¿½ ainakin toimii :) mutta ei ehkï¿½ paras tapa
     public int GetTileAmountSprite() {
         int amount = 0;
         // loop through all of the tiles        

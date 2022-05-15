@@ -7,12 +7,12 @@ using UnityEngine.Tilemaps;
 public class TileData : ScriptableObject
 {
     public TileBase[] tiles;
-    //public TileBase[] burnedTiles; ideana että jokaisella tilellä olisi data burnedtiles. Tässä esim gameobject johon prafab.
+    //public TileBase[] burnedTiles; ideana ettï¿½ jokaisella tilellï¿½ olisi data burnedtiles. Tï¿½ssï¿½ esim gameobject johon prafab.
     public GameObject burned;
     
     public float spreadChange = 100; 
     public float spreadInterwall, burnTime;
     public bool canBurn, ashTile, groudTile, waterTile, leavesTile, secret;
-
+    public ParticleSystem secretParticle;
 
 }
