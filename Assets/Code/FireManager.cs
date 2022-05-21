@@ -44,6 +44,7 @@ public class FireManager : MonoBehaviour
 
     public bool InstantiateLights = false;
     [SerializeField] GameObject fireLight;
+    public GameObject[] secrets;
     void Start() {
         //player = GameObject.FindGameObjectWithTag("Player");
         Vector3 playerPosition = player.transform.position;
@@ -55,6 +56,8 @@ public class FireManager : MonoBehaviour
         scoreCounter = FindObjectOfType<ScoreCounter>();
 
         AudioFW.PlayLoop("FireBurningLoop");
+        SecretBurnableEffects();
+        secrets = GameObject.FindGameObjectsWithTag("Secret");
     }
 
 
@@ -247,7 +250,14 @@ public class FireManager : MonoBehaviour
 
     public void FinishedBurning(Vector3Int position) {
         TileData data = mapManager.GetTileData(position);
-
+        // käydään läpi secret efectit ja tuhotaan samassa kohdassa oleva samalla kun se poltetaan
+        if(data.secret == true){
+            foreach(var secr in secrets){
+                if(secr.transform.position.x - 0.5f == position.x && secr.transform.position.y - 0.5f == position.y){
+                    Destroy(secr);
+                }
+            }
+        }
         BurnedParticles(position);
 
         map.SetTile(position, null);
@@ -265,9 +275,17 @@ public class FireManager : MonoBehaviour
 
     public void FinishedBurningMoving(Vector3Int position) {
         TileData data = mapManager.GetTileDataMoving(position);
-
+        if(data.secret == true){
+            foreach(var secr in secrets){
+                if(secr.transform.position.x - 0.5f == position.x && secr.transform.position.y - 0.5f == position.y){
+                    Destroy(secr);
+                }
+            }
+        }
         BurnedParticles(position);
         mapMoving.SetTile(position, null);
+
+
         if (scoreCounter) {
             scoreCounter.scoreValue += 1;
         }
@@ -322,6 +340,38 @@ public class FireManager : MonoBehaviour
 
         Debug.Log(amount);
         return amount;
+    }
+
+        public void SecretBurnableEffects() {
+
+        // loop through all of the tiles        
+        BoundsInt bounds = map.cellBounds;
+        BoundsInt bounds2 = mapMoving.cellBounds;
+        foreach (Vector3Int pos in bounds.allPositionsWithin) {
+            TileData data = mapManager.GetTileData(pos);
+            TileData data2 = mapManager.GetTileDataMoving(pos);
+            Tile tile = map.GetTile<Tile>(pos);
+            if (tile != null) {
+                if (data.canBurn == true && data.secret == true) {
+                    ParticleSystem secretParticle = Instantiate(data.secretParticle);
+                    secretParticle.transform.position = map.GetCellCenterWorld(pos);
+                    
+                }
+            }
+        }
+
+        foreach (Vector3Int pos in bounds2.allPositionsWithin) {
+            TileData data2 = mapManager.GetTileDataMoving(pos);
+            Tile tile = mapMoving.GetTile<Tile>(pos);
+            if (tile != null) {
+                if (data2.canBurn == true && data2.secret == true) {
+                    ParticleSystem secretParticle = Instantiate(data2.secretParticle);
+                    secretParticle.transform.position = map.GetCellCenterWorld(pos);
+                }
+            }
+        }
+
+
     }
 
     public void InstantiateFireLights(Vector3Int tilePosition) {

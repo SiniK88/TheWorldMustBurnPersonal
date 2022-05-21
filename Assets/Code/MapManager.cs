@@ -23,6 +23,8 @@ public class MapManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         map = GameObject.FindGameObjectWithTag("Map").GetComponent<Tilemap>();
         mapMoving = GameObject.FindGameObjectWithTag("MovingMap").GetComponent<Tilemap>();
+
+
     }
 
     void Awake()
