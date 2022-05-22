@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -44,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map: {fileID: 0}
+  mapMoving: {fileID: 0}
   tileDatas:
   - {fileID: 11400000, guid: 66c4df7a0aee51a4fba43c55b64e1f31, type: 2}
   - {fileID: 11400000, guid: 265415776b9f27241a183e1eb1024206, type: 2}
@@ -75,4 +77,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9e4259f3407b05e4b9c4eff8710e2bd0, type: 2}
   - {fileID: 11400000, guid: 4b2f315a6a3ae5b499732f8a50cc574d, type: 2}
   - {fileID: 11400000, guid: 7bec6fcdec1486e42ba7b662557f8093, type: 2}
+  - {fileID: 11400000, guid: 60f7ea1dae8f9af4eb403508abb96f88, type: 2}
+  - {fileID: 11400000, guid: ce9b65d6970ce0d408bbbc1c11234c9d, type: 2}
+  - {fileID: 11400000, guid: 0a6a9037121acae49b8c2bb6b88c45ee, type: 2}
+  - {fileID: 11400000, guid: 1405803563280cd43aa09477df32956f, type: 2}
+  - {fileID: 11400000, guid: fa2a9dd0aaa3f0d45b353eb5bc9cdbd9, type: 2}
   player: {fileID: 0}

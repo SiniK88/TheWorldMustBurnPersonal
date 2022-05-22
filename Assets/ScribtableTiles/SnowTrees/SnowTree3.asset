@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c549008f833ef094cb4efe577cd9439c, type: 3}
+  m_Name: SnowTree3
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 11400000, guid: 54a94910c52ae244bace4de5aba73ab9, type: 2}
+  - {fileID: 11400000, guid: 09e4515033251164bbff9cadea51cdf5, type: 2}
+  - {fileID: 11400000, guid: d668887a2901ee84caa075bac05375f2, type: 2}
+  - {fileID: 11400000, guid: 23364192352da5646a9100e57f00ed7b, type: 2}
+  burned: {fileID: 934198711284795749, guid: ed82e77a55e968e47b78096875122560, type: 3}
+  spreadChange: 100
+  spreadInterwall: 0.7
+  burnTime: 4
+  canBurn: 1
+  ashTile: 0
+  groudTile: 0
+  waterTile: 0
+  leavesTile: 0
+  secret: 0
+  snowTile: 0
+  secretParticle: {fileID: 0}
